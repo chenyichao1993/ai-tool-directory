@@ -63,23 +63,27 @@ export default function Home() {
           className="w-full max-w-xl px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-base"
         />
       </div>
-      {/* 分类筛选按钮 */}
-      <div className="flex flex-wrap justify-center gap-2 mb-8">
-        <button
-          className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === 'All' ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
-          onClick={() => setSelectedCategory('All')}
-        >
-          All
-        </button>
-        {categories.map(cat => (
+      {/* 分类筛选按钮：All单独，分类整体左对齐 */}
+      <div className="flex items-start gap-4 mb-8 max-w-6xl mx-auto">
+        <div>
           <button
-            key={cat}
-            className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === cat ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
-            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === 'All' ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
+            onClick={() => setSelectedCategory('All')}
           >
-            {cat}
+            All
           </button>
-        ))}
+        </div>
+        <div className="flex flex-wrap gap-2 flex-1">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === cat ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
       {/* 分割线 */}
       <div className="max-w-2xl mx-auto border-b border-gray-200 mb-8"></div>
