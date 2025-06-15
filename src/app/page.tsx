@@ -56,11 +56,11 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* 侧边栏 */}
-      <div className={`transition-all duration-300 ${sidebarOpen ? 'w-56' : 'w-0'} bg-white border-r border-gray-200 h-screen flex flex-col relative z-10`}>
+      {/* 侧边栏 - fixed定位，始终可见 */}
+      <div className={`fixed top-0 left-0 h-screen z-30 transition-all duration-300 ${sidebarOpen ? 'w-56' : 'w-0'} bg-white border-r border-gray-200 flex flex-col`}>
         {/* open/close 按钮（SVG图标+tooltip） */}
         {sidebarOpen ? (
-          <div className="absolute top-4 right-[-20px] z-20">
+          <div className="absolute top-4 right-[-20px] z-40">
             <button
               className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 border border-gray-300 shadow focus:outline-none relative"
               onClick={() => setSidebarOpen(false)}
@@ -83,7 +83,7 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="fixed top-4 left-4 z-30">
+          <div className="fixed top-4 left-4 z-40">
             <button
               className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 border border-gray-300 shadow focus:outline-none relative"
               onClick={() => setSidebarOpen(true)}
@@ -125,8 +125,8 @@ export default function Home() {
           ))}
         </div>
       </div>
-      {/* 主内容区 */}
-      <div className="flex-1 flex flex-col">
+      {/* 主内容区，左侧留出sidebar宽度 */}
+      <div className="flex-1 flex flex-col ml-0 md:ml-56">
         {/* 顶部导语 */}
         <h1 className="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-900 mt-8">
           Discover the best AI websites and AI tools
@@ -187,14 +187,13 @@ export default function Home() {
               <div key={cat}>
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold text-gray-900">{cat}</h2>
-                  {groupedTools[cat].length > 12 && (
-                    <button
-                      className="text-indigo-600 hover:underline text-sm font-medium"
-                      onClick={() => handleShowAll(cat)}
-                    >
-                      More &raquo;
-                    </button>
-                  )}
+                  {/* More按钮始终显示 */}
+                  <button
+                    className="text-indigo-600 hover:underline text-sm font-medium"
+                    onClick={() => handleShowAll(cat)}
+                  >
+                    More &raquo;
+                  </button>
                 </div>
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {groupedTools[cat].slice(0, 12).map((tool, idx) => (
