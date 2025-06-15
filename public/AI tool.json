@@ -1,0 +1,302 @@
+[
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "ChatGPT",
+    "websiteUrl": "https://chat.openai.com",
+    "description": "ChatGPT is an advanced language - interaction model that can answer various types of questions, engage in conversations, assist in generating all kinds of text content such as articles, stories, and copywriting. It can also be used for language translation and text polishing."
+  },
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "Grammarly",
+    "websiteUrl": "https://www.grammarly.com",
+    "description": "Grammarly mainly focuses on text grammar and spelling checking. It can correct errors in English writing in real - time, provide style suggestions and vocabulary selection advice to help improve the quality of English writing."
+  },
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "Jasper",
+    "websiteUrl": "https://www.jasper.ai",
+    "description": "Jasper is a powerful AI writing assistant that can quickly generate high - quality marketing copy, blog articles, product descriptions and many other types of content according to the user's input topics and requirements."
+  },
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "QuillBot",
+    "websiteUrl": "https://quillbot.com",
+    "description": "QuillBot can rewrite and polish text, reorganize sentences with different expressions to make the text more fluent and readable. It also has functions such as grammar checking and synonym replacement."
+  },
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "Copy.ai",
+    "websiteUrl": "https://www.copy.ai",
+    "description": "Copy.ai is specialized in generating various commercial and creative copy, such as advertising slogans, social media copy, and email content. It helps users save time in copywriting and improve the effectiveness of the copy."
+  },
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "DeepL",
+    "websiteUrl": "https://www.deepl.com",
+    "description": "DeepL is a well - known translation tool famous for its high - precision translation quality. It supports mutual translation between multiple languages and can translate all kinds of texts, including documents and web pages."
+  },
+  {
+    "category": "AI Writing & Content Generation",
+    "name": "TLDR This",
+    "websiteUrl": "https://tldrthis.com",
+    "description": "TLDR This can automatically summarize long texts and generate concise abstracts to help users quickly understand the core content of the text."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Midjourney",
+    "websiteUrl": "https://www.midjourney.com",
+    "description": "Midjourney is an image - generation tool. Users can input text descriptions, and it can generate high - quality artistic images with diverse styles, which are widely used in fields such as illustration and design."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "DALL-E 2",
+    "websiteUrl": "https://openai.com/dall-e-2",
+    "description": "DALL - E 2 can create realistic and imaginative images based on natural language descriptions. Whether it's a real - life scene or a fantasy world, it can generate images with excellent visual effects."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Stable Diffusion",
+    "websiteUrl": "https://stablediffusionweb.com",
+    "description": "Stable Diffusion is an open - source image - generation model that allows users to generate various types of images based on text prompts. It also supports operations such as image editing and image style transformation."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Canva",
+    "websiteUrl": "https://www.canva.com",
+    "description": "Canva is an online design platform that offers a wealth of templates and design elements. Users can easily create various design works such as posters, presentations, and social media images without professional design skills."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Adobe Firefly",
+    "websiteUrl": "https://adobe.com/firefly",
+    "description": "Adobe Firefly combines Adobe's creative tools with AI technology. It can generate design materials such as vector graphics and images based on text input. It seamlessly integrates with other Adobe software to facilitate creative design work."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Remove.bg",
+    "websiteUrl": "https://www.remove.bg",
+    "description": "Remove.bg can automatically remove image backgrounds. It is simple and fast to operate and can generate high - quality images with transparent backgrounds, which are widely used in e - commerce, design and other fields."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Looka",
+    "websiteUrl": "https://looka.com",
+    "description": "Looka is mainly used for brand design. Based on the brand information input by users, such as name and industry, it generates brand visual elements such as brand logos and brand color schemes."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Recraft",
+    "websiteUrl": "https://recraft.ai",
+    "description": "Recraft is an image editing and generation tool. It can modify and optimize existing images and also generate new images based on text prompts to meet different creative needs."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Topaz Labs",
+    "websiteUrl": "https://www.topazlabs.com",
+    "description": "Topaz Labs offers a series of image enhancement tools that can be used for image enlargement, noise reduction, sharpening and other processing to improve the quality and details of images."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Playground AI",
+    "websiteUrl": "https://playgroundai.com",
+    "description": "Playground AI allows users to generate various creative images by inputting text instructions. It supports different artistic styles and image effects, providing inspiration and materials for creative workers."
+  },
+  {
+    "category": "Image Generation & Design",
+    "name": "Leonardo.ai",
+    "websiteUrl": "https://leonardo.ai",
+    "description": "Leonardo.ai is an AI image - generation platform. After users input text descriptions, it can generate images with artistic sense and unique styles, suitable for scenarios such as art creation and design."
+  },
+  {
+    "category": "Video Production & Editing",
+    "name": "Runway ML",
+    "websiteUrl": "https://runwayml.com",
+    "description": "Runway ML offers a series of machine - learning - based video processing tools, such as video style transformation and video content generation, bringing an innovative video production experience to video creators."
+  },
+  {
+    "category": "Video Production & Editing",
+    "name": "Synthesia",
+    "websiteUrl": "https://www.synthesia.io",
+    "description": "Synthesia can generate realistic character - narrated videos based on text content. By selecting different virtual characters and languages, users can quickly produce professional video content."
+  },
+  {
+    "category": "Video Production & Editing",
+    "name": "Descript",
+    "websiteUrl": "https://www.descript.com",
+    "description": "Descript is a powerful video and audio editing tool. It supports automatic transcription, which facilitates the editing and modification of video content. It also has a wealth of video editing special effects."
+  },
+  {
+    "category": "Video Production & Editing",
+    "name": "HeyGen",
+    "websiteUrl": "https://www.heygen.com",
+    "description": "HeyGen can quickly generate high - quality AI videos. Users can create lifelike videos by inputting text, selecting characters and other operations, which is suitable for scenarios such as education and training."
+  },
+  {
+    "category": "Video Production & Editing",
+    "name": "Fliki",
+    "websiteUrl": "https://fliki.ai",
+    "description": "Fliki can convert text into voice - over and generate complete videos with video materials. It offers a variety of voice styles and video templates for easy and quick video production."
+  },
+  {
+    "category": "Video Production & Editing",
+    "name": "InVideo",
+    "websiteUrl": "https://invideo.io/ai",
+    "description": "InVideo is an online video production platform that offers a vast number of video templates and rich video editing functions. Users can easily create videos of various styles."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "ElevenLabs",
+    "websiteUrl": "https://elevenlabs.io",
+    "description": "ElevenLabs is a text - to - speech platform that offers a variety of realistic voice styles. It can convert text into natural and smooth speech, which is used in scenarios such as audiobooks and voice assistants."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "Whisper",
+    "websiteUrl": "https://openai.com/research/whisper",
+    "description": "Whisper is an advanced speech recognition model that can accurately recognize speech content in multiple languages and convert it into text. It has wide applications in speech transcription and other aspects."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "Resemble AI",
+    "websiteUrl": "https://www.resemble.ai",
+    "description": "Resemble AI focuses on creating personalized voices. Users can customize their own voice styles for specific needs such as brand voices and game voices."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "Cleanvoice AI",
+    "websiteUrl": "https://cleanvoice.ai",
+    "description": "Cleanvoice AI is mainly used for audio cleaning and enhancement. It can remove background noise and 杂音 from audio to improve the quality and clarity of audio."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "Riffusion",
+    "websiteUrl": "https://www.riffusion.com",
+    "description": "Riffusion allows users to generate music by inputting text descriptions, converting text information into unique musical works and providing a new way for music creation."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "Soundraw",
+    "websiteUrl": "https://soundraw.io",
+    "description": "Soundraw can generate original background music according to users' selections such as music type and mood. It is suitable for scenarios such as videos and games."
+  },
+  {
+    "category": "Audio Processing & Generation",
+    "name": "Voicemod",
+    "websiteUrl": "https://www.voicemod.net",
+    "description": "Voicemod is a voice - changing tool. Users can change their voice effects in real - time and add various interesting sound effects, which is often used in game voice chat and other scenarios."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Notion AI",
+    "websiteUrl": "https://notion.so",
+    "description": "Notion AI is integrated into the Notion office platform. It can assist users in text generation, content summarization, task planning, etc., improving office efficiency and the quality of document creation."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Claude",
+    "websiteUrl": "https://claude.ai",
+    "description": "Claude is an intelligent conversational assistant that can be used for text processing, question - answering, creative inspiration, etc. in various office scenarios to help users better complete work tasks."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Fireflies.ai",
+    "websiteUrl": "https://fireflies.ai",
+    "description": "Fireflies.ai is mainly used for meeting recording and transcription. It can automatically record meeting content and convert speech into text, facilitating the subsequent viewing and organizing of meeting minutes."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Beautiful.ai",
+    "websiteUrl": "https://www.beautiful.ai",
+    "description": "Beautiful.ai focuses on presentation production. It offers intelligent design functions and can automatically generate beautiful and professional presentations based on the content input by users."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Tome",
+    "websiteUrl": "https://tome.app",
+    "description": "Tome is an online presentation and document collaboration tool. It supports real - time collaborative editing and offers a wealth of templates and interactive functions to make content creation and presentation more efficient."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Otter.ai",
+    "websiteUrl": "https://otter.ai",
+    "description": "Otter.ai is a speech - to - text tool, especially suitable for scenarios such as meetings and lectures. It can transcribe speech content in real - time, making it convenient for users to record and review important information."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Excelformulabot",
+    "websiteUrl": "https://excelformulabot.com",
+    "description": "Excelformulabot can help users solve Excel formula - related problems. It provides formula suggestions and explanations to improve users' ability in Excel data processing."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Poised",
+    "websiteUrl": "https://www.poised.com",
+    "description": "Poised can be used to write professional business emails, reports and other texts. It provides functions such as grammar checking and style optimization to make business texts more standardized and persuasive."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "GitMind",
+    "websiteUrl": "https://gitmind.com",
+    "description": "GitMind is an online mind - mapping tool that supports multi - person collaboration. It is convenient for users to organize their thoughts, plan projects, record knowledge, etc."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Monica",
+    "websiteUrl": "https://monica.im",
+    "description": "Monica is a personal assistant that can help users manage tasks, schedules, contacts, etc., improving the efficiency of personal work and life."
+  },
+  {
+    "category": "Office Productivity Tools",
+    "name": "Character.ai",
+    "websiteUrl": "https://character.ai",
+    "description": "Character.ai can create various virtual characters for conversations. It can be used in scenarios such as creative writing, language learning, and simulated conversations."
+  },
+  {
+    "category": "Coding & Development",
+    "name": "GitHub Copilot",
+    "websiteUrl": "https://github.com/features/copilot",
+    "description": "GitHub Copilot is an intelligent programming assistant. It can automatically generate code suggestions based on the context and supports multiple programming languages to help developers improve coding efficiency."
+  },
+  {
+    "category": "Coding & Development",
+    "name": "Replit Ghostwriter",
+    "websiteUrl": "https://replit.com/site/ghostwriter",
+    "description": "Replit Ghostwriter can provide real - time code completion and suggestions during the programming process. It is tightly integrated with Replit's online programming environment to help developers write code more smoothly."
+  },
+  {
+    "category": "Coding & Development",
+    "name": "Hugging Face",
+    "websiteUrl": "https://huggingface.co",
+    "description": "Hugging Face is an open - source machine learning platform that provides a large number of pre - trained models covering multiple fields such as natural language processing and computer vision, making it easy for developers to develop and apply models."
+  },
+  {
+    "category": "Coding & Development",
+    "name": "AssemblyAI",
+    "websiteUrl": "https://www.assemblyai.com",
+    "description": "AssemblyAI focuses on speech recognition and speech processing technology. It provides API interfaces for developers to easily integrate speech recognition functions into their own applications."
+  },
+  {
+    "category": "Coding & Development",
+    "name": "Phind",
+    "websiteUrl": "https://www.phind.com",
+    "description": "Phind is a search engine for developers. It can understand developers' technical problems and provide relevant code examples, documentation and solutions."
+  },
+  {
+    "category": "Coding & Development",
+    "name": "Glow",
+    "websiteUrl": "https://glow.ai",
+    "description": "Glow can help developers accelerate the software development process. It improves development efficiency by automating some development tasks and providing intelligent code suggestions."
+  },
+  {
+    "category": "Search & Prompt Engineering",
+    "name": "Perplexity AI",
+    "websiteUrl": "https://www.perplexity.ai",
+    "description": "Perplexity AI is an intelligent search engine. It can deeply understand users' questions and provide more accurate and comprehensive search results, especially performing well in technical and professional fields."
+  },
+  {
+    "category": "Search & Prompt Engineering",
+    "name": "PromptBase",
+    "websiteUrl": "https://promptbase.com",
+    "description": "PromptBase is a prompt trading and sharing platform. Users can buy, sell or share various high - quality AI prompts here to achieve"
+  }
+]
