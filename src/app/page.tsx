@@ -8,6 +8,7 @@ interface Tool {
   name: string;
   websiteUrl: string;
   description: string;
+  id: string;
 }
 
 // 根据网址生成logoUrl（优先unavatar.io，失败用faviconkit，最后用默认SVG）
@@ -260,6 +261,7 @@ function ToolCard({ tool, idx, showTooltip, setShowTooltip }: {
   return (
     <div
       className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-start text-left border border-gray-100 relative group cursor-pointer"
+      onClick={() => window.open(`/tools/${tool.id}`,'_blank')}
     >
       {/* 外链图标，悬停时显示 */}
       <span
