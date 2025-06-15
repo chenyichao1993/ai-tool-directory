@@ -258,7 +258,23 @@ function ToolCard({ tool, idx, showTooltip, setShowTooltip }: {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-start text-left border border-gray-100">
+    <div
+      className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-start text-left border border-gray-100 relative group cursor-pointer"
+    >
+      {/* 外链图标，悬停时显示 */}
+      <span
+        className="absolute top-3 right-3 hidden group-hover:block p-1 rounded hover:bg-gray-100 transition"
+        title="前往官网"
+        aria-label="前往官网"
+        onClick={e => e.stopPropagation()}
+        style={{ cursor: 'pointer' }}
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="14" height="14" rx="3" stroke="#888" strokeWidth="1.5" fill="#fff"/>
+          <path d="M9 7h4v4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 11l4-4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </span>
       <div className="flex items-center mb-2 w-full">
         <img
           src={logoSrc}
