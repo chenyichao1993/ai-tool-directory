@@ -15,6 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   useEffect(() => {
     fetch('/AI%20tool.json')
@@ -32,14 +33,18 @@ export default function Home() {
       });
   }, []);
 
-  // 实时过滤
+  // 获取所有分类
+  const categories = Array.from(new Set(tools.map(t => t.category))).filter(Boolean);
+
+  // 实时过滤+分类筛选
   const filteredTools = tools.filter(tool => {
     const q = search.toLowerCase();
-    return (
+    const matchSearch =
       tool.name.toLowerCase().includes(q) ||
       tool.description.toLowerCase().includes(q) ||
-      tool.category.toLowerCase().includes(q)
-    );
+      tool.category.toLowerCase().includes(q);
+    const matchCategory = selectedCategory === 'All' || tool.category === selectedCategory;
+    return matchSearch && matchCategory;
   });
 
   return (
@@ -49,7 +54,7 @@ export default function Home() {
         Discover the best AI websites and AI tools
       </h1>
       {/* 搜索框 */}
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-6">
         <input
           type="text"
           value={search}
@@ -57,6 +62,24 @@ export default function Home() {
           placeholder="Search AI tools by name, category or description..."
           className="w-full max-w-xl px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-base"
         />
+      </div>
+      {/* 分类筛选按钮 */}
+      <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <button
+          className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === 'All' ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
+          onClick={() => setSelectedCategory('All')}
+        >
+          All
+        </button>
+        {categories.map(cat => (
+          <button
+            key={cat}
+            className={`px-4 py-2 rounded-full border text-sm font-medium transition ${selectedCategory === cat ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
       {/* 分割线 */}
       <div className="max-w-2xl mx-auto border-b border-gray-200 mb-8"></div>
