@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 // Tool type definition
 interface Tool {
@@ -219,6 +219,18 @@ function ToolCard({ tool, idx, showTooltip, setShowTooltip }: {
   const logoUrls = getLogoUrl(tool.websiteUrl);
   const [logoSrc, setLogoSrc] = useState(isRecraft ? '/recraft.png' : logoUrls[0]);
 
+  // 新增：简介截断判断
+  const descRef = useRef<HTMLDivElement>(null);
+  const [isClamped, setIsClamped] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{left: number, top: number} | null>(null);
+
+  useEffect(() => {
+    const el = descRef.current;
+    if (el) {
+      setIsClamped(el.scrollHeight > el.offsetHeight + 1 || el.scrollWidth > el.offsetWidth + 1);
+    }
+  }, [tool.description]);
+
   function handleLogoError() {
     if (isRecraft) {
       setLogoSrc('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="%23e5e7eb"/><text x="16" y="21" text-anchor="middle" font-size="14" fill="%239ca3af" font-family="Arial">AI</text></svg>');
@@ -227,6 +239,22 @@ function ToolCard({ tool, idx, showTooltip, setShowTooltip }: {
     } else {
       setLogoSrc('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="%23e5e7eb"/><text x="16" y="21" text-anchor="middle" font-size="14" fill="%239ca3af" font-family="Arial">AI</text></svg>');
     }
+  }
+
+  function handleMouseEnter() {
+    setShowTooltip((prev) => ({ ...prev, [idx]: true }));
+    const el = descRef.current;
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      setTooltipPos({
+        left: rect.left + rect.width / 2,
+        top: rect.bottom + 8 // 8px下方间距
+      });
+    }
+  }
+  function handleMouseLeave() {
+    setShowTooltip((prev) => ({ ...prev, [idx]: false }));
+    setTooltipPos(null);
   }
 
   return (
@@ -243,14 +271,18 @@ function ToolCard({ tool, idx, showTooltip, setShowTooltip }: {
         <h2 className="font-semibold text-lg text-gray-800 truncate flex-1">{tool.name}</h2>
       </div>
       <div
+        ref={descRef}
         className="text-gray-600 text-sm line-clamp-3 relative cursor-pointer"
-        onMouseEnter={() => setShowTooltip((prev) => ({ ...prev, [idx]: true }))}
-        onMouseLeave={() => setShowTooltip((prev) => ({ ...prev, [idx]: false }))}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         style={{ width: '100%' }}
       >
         {tool.description}
-        {showTooltip[idx] && (
-          <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 z-50 bg-black text-white text-xs rounded px-3 py-2 shadow-lg whitespace-pre-line max-w-xs min-w-[180px] flex flex-col items-center">
+        {showTooltip[idx] && tooltipPos && (
+          <div
+            className="fixed z-[9999] bg-black text-white text-xs rounded px-3 py-2 shadow-lg whitespace-pre-line max-w-xs min-w-[180px] flex flex-col items-center"
+            style={{ left: tooltipPos.left, top: tooltipPos.top, transform: 'translateX(-50%)' }}
+          >
             <span>{tool.description}</span>
             <span className="w-3 h-3 bg-black rotate-45 absolute -top-1 left-1/2 -translate-x-1/2 z-[-1]" style={{boxShadow: '0 2px 6px rgba(0,0,0,0.15)'}}></span>
           </div>
