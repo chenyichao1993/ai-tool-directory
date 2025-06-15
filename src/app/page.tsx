@@ -18,6 +18,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [showAllMap, setShowAllMap] = useState<{ [cat: string]: boolean }>({});
 
   useEffect(() => {
     fetch('/AI%20tool.json')
@@ -38,16 +39,20 @@ export default function Home() {
   // 获取所有分类
   const categories = Array.from(new Set(tools.map(t => t.category))).filter(Boolean);
 
-  // 实时过滤+分类筛选
-  const filteredTools = tools.filter(tool => {
-    const q = search.toLowerCase();
-    const matchSearch =
-      tool.name.toLowerCase().includes(q) ||
-      tool.description.toLowerCase().includes(q) ||
-      tool.category.toLowerCase().includes(q);
-    const matchCategory = selectedCategory === 'All' || tool.category === selectedCategory;
-    return matchSearch && matchCategory;
+  // 工具分组
+  const groupedTools: { [cat: string]: Tool[] } = {};
+  categories.forEach(cat => {
+    groupedTools[cat] = tools.filter(t => t.category === cat);
   });
+
+  // 分类详情页：只显示选中分类全部工具
+  const isCategoryPage = selectedCategory !== 'All';
+
+  // 首页分组瀑布流：每组显示前12个，more跳转到分类详情
+  function handleShowAll(cat: string) {
+    setSelectedCategory(cat);
+    setShowAllMap({});
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -141,29 +146,82 @@ export default function Home() {
         {/* 错误或加载状态 */}
         {loading && <div className="text-center text-gray-500">Loading tools...</div>}
         {error && <div className="text-center text-red-500">{error}</div>}
-        {/* 工具卡片列表 */}
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">
-          {filteredTools.map((tool, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-center text-center border border-gray-100"
-            >
-              <h2 className="font-semibold text-lg mb-1 text-gray-800">{tool.name}</h2>
-              <div className="text-xs text-indigo-600 mb-2">{tool.category}</div>
-              <p className="text-gray-600 text-sm line-clamp-3 mb-2">{tool.description}</p>
-              {tool.websiteUrl && (
-                <a
-                  href={tool.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-block text-indigo-600 hover:underline text-sm font-medium"
-                >
-                  Visit Website
-                </a>
-              )}
+        {/* 分类详情页 or 首页分组瀑布流 */}
+        {isCategoryPage ? (
+          <div className="max-w-6xl mx-auto w-full">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-gray-900">{selectedCategory}</h2>
+              <button
+                className="text-indigo-600 hover:underline text-sm font-medium"
+                onClick={() => setSelectedCategory('All')}
+              >
+                Back to All
+              </button>
             </div>
-          ))}
-        </div>
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {groupedTools[selectedCategory]?.map((tool, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-center text-center border border-gray-100"
+                >
+                  <h2 className="font-semibold text-lg mb-1 text-gray-800">{tool.name}</h2>
+                  <div className="text-xs text-indigo-600 mb-2">{tool.category}</div>
+                  <p className="text-gray-600 text-sm line-clamp-3 mb-2">{tool.description}</p>
+                  {tool.websiteUrl && (
+                    <a
+                      href={tool.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-block text-indigo-600 hover:underline text-sm font-medium"
+                    >
+                      Visit Website
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-12 max-w-6xl mx-auto w-full">
+            {categories.map(cat => (
+              <div key={cat}>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-2xl font-bold text-gray-900">{cat}</h2>
+                  {groupedTools[cat].length > 12 && (
+                    <button
+                      className="text-indigo-600 hover:underline text-sm font-medium"
+                      onClick={() => handleShowAll(cat)}
+                    >
+                      More &raquo;
+                    </button>
+                  )}
+                </div>
+                <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  {groupedTools[cat].slice(0, 12).map((tool, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-center text-center border border-gray-100"
+                    >
+                      <h2 className="font-semibold text-lg mb-1 text-gray-800">{tool.name}</h2>
+                      <div className="text-xs text-indigo-600 mb-2">{tool.category}</div>
+                      <p className="text-gray-600 text-sm line-clamp-3 mb-2">{tool.description}</p>
+                      {tool.websiteUrl && (
+                        <a
+                          href={tool.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-auto inline-block text-indigo-600 hover:underline text-sm font-medium"
+                        >
+                          Visit Website
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
