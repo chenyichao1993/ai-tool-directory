@@ -282,12 +282,6 @@
     "description": "Phind is a search engine for developers. It can understand developers' technical problems and provide relevant code examples, documentation and solutions."
   },
   {
-    "category": "Coding & Development",
-    "name": "Glow",
-    "websiteUrl": "https://glow.ai",
-    "description": "Glow can help developers accelerate the software development process. It improves development efficiency by automating some development tasks and providing intelligent code suggestions."
-  },
-  {
     "category": "Search & Prompt Engineering",
     "name": "Perplexity AI",
     "websiteUrl": "https://www.perplexity.ai",
