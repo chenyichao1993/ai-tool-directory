@@ -146,7 +146,7 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
                 href={tool.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-[380px] h-[220px] relative group rounded-xl overflow-hidden"
+                className="block w-[460px] h-[260px] relative group rounded-xl overflow-hidden"
               >
                 <img
                   src={screenshot}
