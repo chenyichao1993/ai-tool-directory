@@ -736,46 +736,6 @@
   },
   {
     "category": "Office Productivity Tools",
-    "name": "Tome",
-    "websiteUrl": "https://tome.app",
-    "description": "Tome is an online presentation and document collaboration tool. It supports real - time collaborative editing and offers a wealth of templates and interactive functions to make content creation and presentation more efficient.",
-    "tags": [
-      "Online Presentation Creation",
-      "Document Collaboration",
-      "Real-time Collaborative Editing",
-      "Template Usage",
-      "Interactive Function Application",
-      "Content Creation",
-      "Presentation Efficiency",
-      "Collaborative Editing",
-      "Document Management",
-      "Presentation Tools",
-      "Content Management",
-      "Collaboration Tools"
-    ]
-  },
-  {
-    "category": "Office Productivity Tools",
-    "name": "Otter.ai",
-    "websiteUrl": "https://otter.ai",
-    "description": "Otter.ai is a speech - to - text tool, especially suitable for scenarios such as meetings and lectures. It can transcribe speech content in real - time, making it convenient for users to record and review important information.",
-    "tags": [
-      "Speech-to-Text Conversion",
-      "Real-time Transcription",
-      "Meeting Content Recording",
-      "Lecture Transcription",
-      "Speech Content Processing",
-      "Information Recording",
-      "Content Review",
-      "Audio Transcription",
-      "Speech Processing",
-      "Content Documentation",
-      "Real-time Processing",
-      "Audio-to-Text Conversion"
-    ]
-  },
-  {
-    "category": "Office Productivity Tools",
     "name": "Excelformulabot",
     "websiteUrl": "https://excelformulabot.com",
     "description": "Excelformulabot can help users solve Excel formula - related problems. It provides formula suggestions and explanations to improve users' ability in Excel data processing.",
