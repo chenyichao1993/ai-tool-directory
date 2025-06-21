@@ -148,42 +148,42 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
                 {/* Facebook */}
                 <div className="relative group">
                   <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" className="transition-colors">
-                    <img src="/social/facebook.png" alt="Facebook" className="w-8 h-8 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#1877F3] transition" />
+                    <img src="/social/facebook.png" alt="Facebook" className="w-5 h-5 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#1877F3] transition" />
                   </a>
                   <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-20 transition-opacity">Share on Facebook</span>
                 </div>
                 {/* Instagram */}
                 <div className="relative group">
                   <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Share on Instagram" className="transition-colors">
-                    <img src="/social/instagram.png" alt="Instagram" className="w-8 h-8 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#E4405F] transition" />
+                    <img src="/social/instagram.png" alt="Instagram" className="w-5 h-5 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#E4405F] transition" />
                   </a>
                   <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-20 transition-opacity">Share on Instagram</span>
                 </div>
                 {/* X(Twitter) */}
                 <div className="relative group">
                   <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&text=${encodeURIComponent(tool.name)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X" className="transition-colors">
-                    <img src="/social/x.png" alt="X" className="w-8 h-8 object-contain rounded-lg group-hover:ring-2 group-hover:ring-black transition" />
+                    <img src="/social/x.png" alt="X" className="w-5 h-5 object-contain rounded-lg group-hover:ring-2 group-hover:ring-black transition" />
                   </a>
                   <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-20 transition-opacity">Share on X</span>
                 </div>
                 {/* LinkedIn */}
                 <div className="relative group">
                   <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" className="transition-colors">
-                    <img src="/social/linkedin.png" alt="LinkedIn" className="w-8 h-8 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#0A66C2] transition" />
+                    <img src="/social/linkedin.png" alt="LinkedIn" className="w-5 h-5 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#0A66C2] transition" />
                   </a>
                   <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-20 transition-opacity">Share on LinkedIn</span>
                 </div>
                 {/* Reddit */}
                 <div className="relative group">
                   <a href={`https://www.reddit.com/submit?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&title=${encodeURIComponent(tool.name)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit" className="transition-colors">
-                    <img src="/social/reddit.png" alt="Reddit" className="w-8 h-8 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#FF4500] transition" />
+                    <img src="/social/reddit.png" alt="Reddit" className="w-5 h-5 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#FF4500] transition" />
                   </a>
                   <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-20 transition-opacity">Share on Reddit</span>
                 </div>
                 {/* 邮件 */}
                 <div className="relative group">
                   <a href={`mailto:?subject=${encodeURIComponent('Check out this AI tool: ' + tool.name)}&body=${encodeURIComponent('I found this AI tool and thought you might like it: ' + (typeof window !== 'undefined' ? window.location.href : ''))}`} target="_blank" rel="noopener noreferrer" aria-label="Share by Email" className="transition-colors">
-                    <img src="/social/email.png" alt="Email" className="w-8 h-8 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#7C5CFA] transition" />
+                    <img src="/social/email.png" alt="Email" className="w-5 h-5 object-contain rounded-lg group-hover:ring-2 group-hover:ring-[#7C5CFA] transition" />
                   </a>
                   <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-20 transition-opacity">Share by Email</span>
                 </div>
