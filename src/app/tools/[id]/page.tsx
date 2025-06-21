@@ -126,10 +126,16 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
                   {copySuccess ? 'Copied!' : 'Copy Link'}
                 </button>
               </div>
-              {/* Tags placeholder, will be improved in next step */}
-              <div className="flex flex-wrap gap-2 mt-2">
-                <span className="px-3 py-1 rounded-full border text-sm text-gray-700 bg-gray-50">AI Tool</span>
-                <span className="px-3 py-1 rounded-full border text-sm text-gray-700 bg-gray-50">Image Generation</span>
+              {/* 动态渲染tags */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {tool.tags && tool.tags.map((tag: string) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full text-sm font-medium border border-gray-200 text-gray-600 bg-gray-50 hover:bg-[#7C5CFA] hover:text-white hover:border-[#7C5CFA] cursor-pointer transition-colors duration-200"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
             {/* Right: Screenshot */}
