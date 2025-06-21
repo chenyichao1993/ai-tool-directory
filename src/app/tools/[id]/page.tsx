@@ -142,11 +142,24 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
             </div>
             {/* Right: Screenshot */}
             <div className="mt-8 md:mt-0 md:ml-8 flex-shrink-0">
-              <img
-                src={screenshot}
-                alt="Website Screenshot"
-                className="w-[380px] h-[220px] object-cover rounded-xl border shadow"
-              />
+              <a
+                href={tool.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-[380px] h-[220px] relative group rounded-xl overflow-hidden"
+              >
+                <img
+                  src={screenshot}
+                  alt="Website Screenshot"
+                  className="w-full h-full object-cover rounded-xl border shadow"
+                  loading="lazy"
+                  onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder1.png'; }}
+                />
+                {/* 遮罩层 */}
+                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+                  <span className="text-white text-2xl font-bold">Visit Website</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>

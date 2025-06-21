@@ -59,7 +59,8 @@
       "Brand Voice Adaptation",
       "Long-form Content Generation",
       "Creative Story Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/jasper.png"
   },
   {
     "category": "AI Writing & Content Generation",
@@ -247,7 +248,8 @@
       "AI-powered Design Tools",
       "Creative Software Integration",
       "Professional Design Workflow"
-    ]
+    ],
+    "screenshot": "/screenshots/adobefirefly.png"
   },
   {
     "category": "Image Generation & Design",
