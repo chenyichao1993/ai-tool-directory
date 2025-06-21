@@ -2,6 +2,7 @@
 
 import { notFound } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 // 星级评分组件
 function StarRating({ rating }: { rating: number }) {
@@ -129,12 +130,13 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
               {/* 动态渲染tags */}
               <div className="flex flex-wrap gap-2 mt-4">
                 {tool.tags && tool.tags.map((tag: string) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-full text-sm font-medium border border-gray-200 text-gray-600 bg-gray-50 hover:bg-[#7C5CFA] hover:text-white hover:border-[#7C5CFA] cursor-pointer transition-colors duration-200"
-                  >
-                    {tag}
-                  </span>
+                  <Link key={tag} href={`/tags/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`}>
+                    <span
+                      className="px-3 py-1 rounded-full text-sm font-medium border border-gray-200 text-gray-600 bg-gray-50 hover:bg-[#7C5CFA] hover:text-white hover:border-[#7C5CFA] cursor-pointer transition-colors duration-200"
+                    >
+                      {tag}
+                    </span>
+                  </Link>
                 ))}
               </div>
             </div>
