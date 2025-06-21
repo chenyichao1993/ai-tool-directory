@@ -130,7 +130,7 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
               {/* 动态渲染tags */}
               <div className="flex flex-wrap gap-2 mt-4">
                 {tool.tags && tool.tags.map((tag: string) => (
-                  <Link key={tag} href={`/tags/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`}>
+                  <Link key={tag} href={`/tags/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`} target="_blank" rel="noopener noreferrer">
                     <span
                       className="px-3 py-1 rounded-full text-sm font-medium border border-gray-200 text-gray-600 bg-gray-50 hover:bg-[#7C5CFA] hover:text-white hover:border-[#7C5CFA] cursor-pointer transition-colors duration-200"
                     >
