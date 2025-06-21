@@ -17,7 +17,8 @@
       "Script Generation",
       "Data Extraction",
       "Content Idea Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/chatgpt.png"
   },
   {
     "category": "AI Writing & Content Generation",
@@ -37,7 +38,8 @@
       "Writing Analytics",
       "Real-time Feedback",
       "Proofreading"
-    ]
+    ],
+    "screenshot": "/screenshots/grammarly.png"
   },
   {
     "category": "AI Writing & Content Generation",
@@ -77,7 +79,8 @@
       "Synonym Finding",
       "Content Polishing",
       "Word Choice Improvement"
-    ]
+    ],
+    "screenshot": "/screenshots/quillbot.png"
   },
   {
     "category": "AI Writing & Content Generation",
@@ -97,7 +100,8 @@
       "Sentence Rewriting",
       "Freestyle Text Generation",
       "Listicle Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/copy.ai.png"
   },
   {
     "category": "AI Writing & Content Generation",
@@ -117,7 +121,8 @@
       "Text-to-Speech Translation",
       "File Translation (.pdf, .docx, .pptx)",
       "Image Text Translation"
-    ]
+    ],
+    "screenshot": "/screenshots/deepl.png"
   },
   {
     "category": "AI Writing & Content Generation",
@@ -137,7 +142,8 @@
       "Keyword Highlighting",
       "AI-powered Summaries",
       "Reading Time Reduction"
-    ]
+    ],
+    "screenshot": "/screenshots/tldrthis.png"
   },
   {
     "category": "Image Generation & Design",
@@ -157,7 +163,8 @@
       "Aspect Ratio Control",
       "Parameter Tuning",
       "Prompt-based Editing"
-    ]
+    ],
+    "screenshot": "/screenshots/midjourney.png"
   },
   {
     "category": "Image Generation & Design",
@@ -177,7 +184,8 @@
       "High-Resolution Image Output",
       "Layered Image Export",
       "Digital Art Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/dall-e2.png"
   },
   {
     "category": "Image Generation & Design",
@@ -197,7 +205,8 @@
       "LoRA Model Usage",
       "Negative Prompting",
       "Open Source Model"
-    ]
+    ],
+    "screenshot": "/screenshots/stablediffusion.png"
   },
   {
     "category": "Image Generation & Design",
@@ -217,7 +226,8 @@
       "Poster Design",
       "Visual Content Creation",
       "Print-ready exports"
-    ]
+    ],
+    "screenshot": "/screenshots/canva.png"
   },
   {
     "category": "Image Generation & Design",
@@ -257,7 +267,8 @@
       "Background Replacement",
       "One-click Editing",
       "E-commerce Image Preparation"
-    ]
+    ],
+    "screenshot": "/screenshots/remove.bg.png"
   },
   {
     "category": "Image Generation & Design",
@@ -277,7 +288,8 @@
       "Brand Guideline Creation",
       "Professional Branding Tools",
       "Custom Logo Design"
-    ]
+    ],
+    "screenshot": "/screenshots/looka.png"
   },
   {
     "category": "Image Generation & Design",
@@ -297,7 +309,8 @@
       "Image Upscaling",
       "Creative Design Tools",
       "Image Customization"
-    ]
+    ],
+    "screenshot": "/screenshots/recraft.png"
   },
   {
     "category": "Image Generation & Design",
@@ -317,7 +330,8 @@
       "Automatic Enhancement",
       "Visual Improvement",
       "Professional Image Processing"
-    ]
+    ],
+    "screenshot": "/screenshots/topazlabs.png"
   },
   {
     "category": "Image Generation & Design",
@@ -337,7 +351,8 @@
       "Creative Design Tools",
       "Image Customization",
       "Artistic Rendering"
-    ]
+    ],
+    "screenshot": "/screenshots/playgroundai.png"
   },
   {
     "category": "Image Generation & Design",
@@ -357,7 +372,8 @@
       "Visual Design Tools",
       "Creative Asset Creation",
       "Artistic Rendering"
-    ]
+    ],
+    "screenshot": "/screenshots/leonardo.ai.png"
   },
   {
     "category": "Video Production & Editing",
@@ -377,7 +393,8 @@
       "Video Production Tools",
       "Media Creation",
       "Video Processing"
-    ]
+    ],
+    "screenshot": "/screenshots/runwayml.png"
   },
   {
     "category": "Video Production & Editing",
@@ -397,7 +414,8 @@
       "Realistic Avatar Creation",
       "Video Narration",
       "Presentation Video Creation"
-    ]
+    ],
+    "screenshot": "/screenshots/synthesia.png"
   },
   {
     "category": "Video Production & Editing",
@@ -417,7 +435,8 @@
       "Collaboration Tools",
       "Clip Creation",
       "Content Repurposing"
-    ]
+    ],
+    "screenshot": "/screenshots/descript.png"
   },
   {
     "category": "Video Production & Editing",
@@ -437,7 +456,8 @@
       "Video Template Usage",
       "Character-based Video Creation",
       "Video Content Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/heygen.png"
   },
   {
     "category": "Video Production & Editing",
@@ -457,7 +477,8 @@
       "Template-based Video Creation",
       "Voice Customization",
       "Video Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/fliki.png"
   },
   {
     "category": "Video Production & Editing",
@@ -477,7 +498,8 @@
       "Video Editing Tools",
       "Video Production Platform",
       "Video Creation"
-    ]
+    ],
+    "screenshot": "/screenshots/invideo.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -497,7 +519,8 @@
       "Voice Style Variety",
       "Audio Production",
       "Voice Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/elevenlabs.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -517,7 +540,8 @@
       "Speech Analysis",
       "Language Processing",
       "Transcription Services"
-    ]
+    ],
+    "screenshot": "/screenshots/whisper.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -537,7 +561,8 @@
       "Voice Generation",
       "Audio Voice Creation",
       "Voice Synthesis"
-    ]
+    ],
+    "screenshot": "/screenshots/resembleai.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -557,7 +582,8 @@
       "Noise Elimination",
       "Audio Quality Enhancement",
       "Sound Processing"
-    ]
+    ],
+    "screenshot": "/screenshots/cleanvoiceai.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -577,7 +603,8 @@
       "Musical Work Creation",
       "Audio Generation",
       "Music Production"
-    ]
+    ],
+    "screenshot": "/screenshots/riffusion.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -597,7 +624,8 @@
       "Audio Production",
       "Music Creation",
       "Sound Generation"
-    ]
+    ],
+    "screenshot": "/screenshots/soundraw.png"
   },
   {
     "category": "Audio Processing & Generation",
@@ -617,7 +645,8 @@
       "Voice Transformation",
       "Audio Modification",
       "Voice Processing"
-    ]
+    ],
+    "screenshot": "/screenshots/voicemod.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -637,7 +666,8 @@
       "Productivity Enhancement",
       "Workflow Optimization",
       "Content Management"
-    ]
+    ],
+    "screenshot": "/screenshots/notionai.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -657,7 +687,8 @@
       "Workflow Support",
       "Content Creation",
       "Intelligent Assistance"
-    ]
+    ],
+    "screenshot": "/screenshots/claude.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -677,7 +708,8 @@
       "Content Organization",
       "Meeting Documentation",
       "Audio Processing"
-    ]
+    ],
+    "screenshot": "/screenshots/fireflies.ai.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -697,7 +729,8 @@
       "Design Generation",
       "Presentation Creation",
       "Visual Design"
-    ]
+    ],
+    "screenshot": "/screenshots/beautiful.ai.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -757,7 +790,8 @@
       "Data Processing Tools",
       "Formula Help",
       "Excel Support"
-    ]
+    ],
+    "screenshot": "/screenshots/excelformulabot.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -777,7 +811,8 @@
       "Writing Assistance",
       "Content Optimization",
       "Professional Writing"
-    ]
+    ],
+    "screenshot": "/screenshots/poised.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -797,7 +832,8 @@
       "Knowledge Management",
       "Visual Planning",
       "Collaboration Tools"
-    ]
+    ],
+    "screenshot": "/screenshots/gitmind.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -817,7 +853,8 @@
       "Personal Productivity",
       "Work Management",
       "Life Management"
-    ]
+    ],
+    "screenshot": "/screenshots/monica.png"
   },
   {
     "category": "Office Productivity Tools",
@@ -837,7 +874,8 @@
       "Virtual Interaction",
       "Character-based Communication",
       "Conversation Tools"
-    ]
+    ],
+    "screenshot": "/screenshots/character.ai.png"
   },
   {
     "category": "Coding & Development",
@@ -857,7 +895,8 @@
       "Programming Tools",
       "Development Assistance",
       "Code Assistance"
-    ]
+    ],
+    "screenshot": "/screenshots/githubcopilot.png"
   },
   {
     "category": "Coding & Development",
@@ -877,7 +916,8 @@
       "Code Writing Support",
       "Development Tools",
       "Programming Support"
-    ]
+    ],
+    "screenshot": "/screenshots/replitghostwriter.png"
   },
   {
     "category": "Coding & Development",
@@ -897,7 +937,8 @@
       "AI Model Provision",
       "Model Deployment",
       "Machine Learning Tools"
-    ]
+    ],
+    "screenshot": "/screenshots/huggingface.png"
   },
   {
     "category": "Coding & Development",
@@ -917,7 +958,8 @@
       "Processing Tools",
       "API Tools",
       "Speech Tools"
-    ]
+    ],
+    "screenshot": "/screenshots/assemblyai.png"
   },
   {
     "category": "Coding & Development",
@@ -937,7 +979,8 @@
       "Development Support",
       "Technical Documentation",
       "Developer Tools"
-    ]
+    ],
+    "screenshot": "/screenshots/phind.png"
   },
   {
     "category": "Search & Prompt Engineering",
@@ -957,7 +1000,8 @@
       "Information Retrieval",
       "Search Enhancement",
       "Intelligent Information Access"
-    ]
+    ],
+    "screenshot": "/screenshots/perplexityai.png"
   },
   {
     "category": "Search & Prompt Engineering",
@@ -977,6 +1021,7 @@
       "Prompt Access",
       "Prompt Tools",
       "Prompt Management"
-    ]
+    ],
+    "screenshot": "/screenshots/promptbase.png"
   }
 ]
