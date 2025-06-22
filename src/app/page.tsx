@@ -225,7 +225,7 @@ export default function Home() {
                     className="text-indigo-600 hover:underline text-sm font-medium"
                     onClick={() => setSelectedCategory('All')}
                   >
-                    Back to All
+                    {`Check all ${selectedCategory} tools`} &raquo;
                   </button>
                 </div>
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
