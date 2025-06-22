@@ -84,10 +84,9 @@ export default function Home() {
   // 分类详情页：只显示选中分类全部工具
   const isCategoryPage = selectedCategory !== 'All';
 
-  // 首页分组瀑布流：每组显示前12个，more跳转到分类详情
+  // 首页分组瀑布流：每组显示前8个，按钮始终显示，点击跳转新页面
   function handleShowAll(cat: string) {
-    setSelectedCategory(cat);
-    setShowAllMap({});
+    window.open(`/categories/${encodeURIComponent(cat.toLowerCase().replace(/\s+/g, '-'))}`, '_blank');
   }
 
   return (
@@ -250,16 +249,16 @@ export default function Home() {
                     <div key={cat}>
                       <div className="flex items-center justify-between mb-4">
                         <h2 className="text-2xl font-bold text-gray-900">{cat}</h2>
-                        {/* More按钮始终显示 */}
+                        {/* Check all XXX tools按钮始终显示 */}
                         <button
                           className="text-indigo-600 hover:underline text-sm font-medium"
                           onClick={() => handleShowAll(cat)}
                         >
-                          More &raquo;
+                          {`Check all ${cat} tools`} &raquo;
                         </button>
                       </div>
                       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        {groupedTools[cat].slice(0, 12).map((tool, idx) => (
+                        {groupedTools[cat].slice(0, 8).map((tool, idx) => (
                           <ToolCard key={idx} tool={tool} />
                         ))}
                       </div>
