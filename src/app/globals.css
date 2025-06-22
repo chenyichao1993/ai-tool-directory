@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+button, a[role="button"], .btn, input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+}

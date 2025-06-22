@@ -223,9 +223,9 @@ export default function Home() {
                   <h2 className="text-2xl font-bold text-gray-900">{selectedCategory}</h2>
                   <button
                     className="text-indigo-600 hover:underline text-sm font-medium"
-                    onClick={() => setSelectedCategory('All')}
+                    onClick={() => window.open(`/categories/${encodeURIComponent(selectedCategory.toLowerCase().replace(/\s+/g, '-'))}`, '_blank')}
                   >
-                    {`Check all ${selectedCategory} tools`} &raquo;
+                    {`Check all ${selectedCategory}${/tools$/i.test(selectedCategory.trim()) ? '' : ' tools'} »`}
                   </button>
                 </div>
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -254,7 +254,7 @@ export default function Home() {
                           className="text-indigo-600 hover:underline text-sm font-medium"
                           onClick={() => handleShowAll(cat)}
                         >
-                          {`Check all ${cat} tools`} &raquo;
+                          {`Check all ${cat}${/tools$/i.test(cat.trim()) ? '' : ' tools'} »`}
                         </button>
                       </div>
                       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
