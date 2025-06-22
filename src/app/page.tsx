@@ -59,10 +59,20 @@ export default function Home() {
   // 获取所有分类
   const categories = Array.from(new Set(tools.map(t => t.category))).filter(Boolean);
 
-  // 工具分组
+  // 搜索过滤逻辑
+  const searchLower = search.trim().toLowerCase();
+  const filteredTools = searchLower
+    ? tools.filter(t =>
+        t.name.toLowerCase().includes(searchLower) ||
+        t.category.toLowerCase().includes(searchLower) ||
+        t.description.toLowerCase().includes(searchLower)
+      )
+    : tools;
+
+  // 工具分组（基于过滤后的工具）
   const groupedTools: { [cat: string]: Tool[] } = {};
   categories.forEach(cat => {
-    groupedTools[cat] = tools.filter(t => t.category === cat);
+    groupedTools[cat] = filteredTools.filter(t => t.category === cat);
   });
 
   // 分类详情页：只显示选中分类全部工具
@@ -154,13 +164,25 @@ export default function Home() {
           </h1>
           {/* 搜索框 */}
           <div className="flex justify-center mb-6">
-            <input
-              type="text"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="Search AI tools by name, category or description..."
-              className="w-full max-w-xl px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-base"
-            />
+            <div className="relative w-full max-w-3xl">
+              <input
+                type="text"
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                placeholder="Search AI tools by name, category or description..."
+                className="w-full pr-16 pl-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-base"
+                style={{ height: 44 }}
+              />
+              <span
+                className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#6C47FF] flex items-center justify-center shadow"
+                style={{ width: 40, height: 40, borderRadius: '50%', boxShadow: '0 2px 8px rgba(108,71,255,0.08)', cursor: 'pointer' }}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="11" cy="11" r="7" stroke="white" strokeWidth="2" />
+                  <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </span>
+            </div>
           </div>
           {/* 分割线 */}
           <div className="max-w-2xl mx-auto border-b border-gray-200 mb-8"></div>
@@ -180,14 +202,18 @@ export default function Home() {
                 </button>
               </div>
               <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {groupedTools[selectedCategory]?.map((tool, idx) => (
-                  <ToolCard key={idx} tool={tool} />
-                ))}
+                {groupedTools[selectedCategory]?.length ? (
+                  groupedTools[selectedCategory].map((tool, idx) => (
+                    <ToolCard key={idx} tool={tool} />
+                  ))
+                ) : (
+                  <div className="col-span-full text-center text-gray-400 py-8">未找到相关工具</div>
+                )}
               </div>
             </div>
           ) : (
             <div className="flex flex-col gap-12 w-full">
-              {categories.map(cat => (
+              {categories.filter(cat => groupedTools[cat].length > 0).map(cat => (
                 <div key={cat}>
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-2xl font-bold text-gray-900">{cat}</h2>
