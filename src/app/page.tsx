@@ -9,6 +9,7 @@ interface Tool {
   websiteUrl: string;
   description: string;
   id: string;
+  screenshot?: string;
 }
 
 // 根据网址生成logoUrl（优先unavatar.io，失败用faviconkit，最后用默认SVG）
@@ -180,7 +181,7 @@ export default function Home() {
               </div>
               <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {groupedTools[selectedCategory]?.map((tool, idx) => (
-                  <ToolCard key={idx} tool={tool} idx={selectedCategory + '-' + idx} showTooltip={showTooltip} setShowTooltip={setShowTooltip} />
+                  <ToolCard key={idx} tool={tool} />
                 ))}
               </div>
             </div>
@@ -200,7 +201,7 @@ export default function Home() {
                   </div>
                   <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {groupedTools[cat].slice(0, 12).map((tool, idx) => (
-                      <ToolCard key={idx} tool={tool} idx={cat + '-' + idx} showTooltip={showTooltip} setShowTooltip={setShowTooltip} />
+                      <ToolCard key={idx} tool={tool} />
                     ))}
                   </div>
                 </div>
@@ -214,100 +215,114 @@ export default function Home() {
 }
 
 // 工具卡片组件
-function ToolCard({ tool, idx, showTooltip, setShowTooltip }: {
-  tool: Tool;
-  idx: string;
-  showTooltip: { [idx: string]: boolean };
-  setShowTooltip: React.Dispatch<React.SetStateAction<{ [idx: string]: boolean }>>;
-}) {
-  // Recraft 特殊处理
-  const isRecraft = tool.name === 'Recraft';
-  const logoUrls = getLogoUrl(tool.websiteUrl);
-  const [logoSrc, setLogoSrc] = useState(isRecraft ? '/recraft.png' : logoUrls[0]);
-
-  // 新增：简介截断判断
-  const descRef = useRef<HTMLDivElement>(null);
+function ToolCard({ tool }: { tool: Tool }) {
+  const descRef = useRef<HTMLParagraphElement>(null);
   const [isClamped, setIsClamped] = useState(false);
-  const [tooltipPos, setTooltipPos] = useState<{left: number, top: number} | null>(null);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ left: number; top: number } | null>(null);
 
   useEffect(() => {
-    const el = descRef.current;
-    if (el) {
-      setIsClamped(el.scrollHeight > el.offsetHeight + 1 || el.scrollWidth > el.offsetWidth + 1);
+    const element = descRef.current;
+    if (element) {
+      if (element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth) {
+        setIsClamped(true);
+      } else {
+        setIsClamped(false);
+      }
     }
-  }, [tool.description]);
+  }, [tool.description, descRef]);
 
-  function handleLogoError() {
-    if (isRecraft) {
-      setLogoSrc('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="%23e5e7eb"/><text x="16" y="21" text-anchor="middle" font-size="14" fill="%239ca3af" font-family="Arial">AI</text></svg>');
-    } else if (logoSrc === logoUrls[0] && logoUrls[1]) {
-      setLogoSrc(logoUrls[1]);
-    } else {
-      setLogoSrc('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="%23e5e7eb"/><text x="16" y="21" text-anchor="middle" font-size="14" fill="%239ca3af" font-family="Arial">AI</text></svg>');
-    }
-  }
-
-  function handleMouseEnter() {
-    setShowTooltip((prev) => ({ ...prev, [idx]: true }));
-    const el = descRef.current;
-    if (el) {
-      const rect = el.getBoundingClientRect();
+  const handleMouseEnter = (e: React.MouseEvent) => {
+    if (isClamped && descRef.current) {
+      const rect = descRef.current.getBoundingClientRect();
       setTooltipPos({
         left: rect.left + rect.width / 2,
         top: rect.bottom + 8 // 8px下方间距
       });
+      setShowTooltip(true);
     }
-  }
-  function handleMouseLeave() {
-    setShowTooltip((prev) => ({ ...prev, [idx]: false }));
+  };
+
+  const handleMouseLeave = () => {
+    setShowTooltip(false);
     setTooltipPos(null);
-  }
+  };
 
   return (
     <div
-      className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col items-start text-left border border-gray-100 relative group cursor-pointer"
-      onClick={() => window.open(`/tools/${tool.id}`,'_blank')}
+      className="group relative block bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-shadow duration-300 hover:shadow-lg cursor-pointer"
+      onClick={() => window.open(`/tools/${tool.id}`, '_blank')}
     >
-      {/* 外链图标，悬停时显示 */}
-      <span
-        className="absolute top-3 right-3 hidden group-hover:block p-1 rounded hover:bg-gray-100 transition"
-        title="前往官网"
-        aria-label="前往官网"
-        onClick={e => e.stopPropagation()}
-        style={{ cursor: 'pointer' }}
+      <a
+        href={tool.websiteUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className="absolute top-3 right-3 z-10 hidden group-hover:flex items-center justify-center w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full transition"
+        title="Visit official website"
+        aria-label="Visit official website"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="14" height="14" rx="3" stroke="#888" strokeWidth="1.5" fill="#fff"/>
-          <path d="M9 7h4v4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M9 11l4-4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+           <rect x="3" y="3" width="14" height="14" rx="3" stroke="#888" strokeWidth="1.5" fill="none"/>
+           <path d="M9 7h4v4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+           <path d="M9 11l4-4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </span>
-      <div className="flex items-center mb-2 w-full">
-        <img
-          src={logoSrc}
-          alt={tool.name + ' logo'}
-          className="w-8 h-8 rounded bg-gray-100 object-contain mr-2"
-          style={{ minWidth: 32, minHeight: 32 }}
-          loading="lazy"
-          onError={handleLogoError}
-        />
-        <h2 className="font-semibold text-lg text-gray-800 truncate flex-1">{tool.name}</h2>
+      </a>
+      <div className="h-40 w-full bg-gray-100 dark:bg-gray-700">
+        {tool.screenshot ? (
+          <img
+            src={tool.screenshot}
+            alt={tool.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
+        )}
       </div>
-      <div
-        ref={descRef}
-        className="text-gray-600 text-sm line-clamp-3 relative cursor-pointer"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        style={{ width: '100%' }}
-      >
-        {tool.description}
-        {showTooltip[idx] && tooltipPos && (
+      <div className="p-4">
+        <h3 className="text-lg font-bold mb-1 truncate text-gray-800 dark:text-white">{tool.name}</h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{tool.category}</p>
+        <p
+          ref={descRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="text-sm text-gray-600 dark:text-gray-300 relative"
+          style={{
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            cursor: isClamped ? 'pointer' : 'default',
+          }}
+        >
+          {tool.description}
+        </p>
+        {showTooltip && tooltipPos && (
           <div
-            className="fixed z-[9999] bg-black text-white text-xs rounded px-3 py-2 shadow-lg whitespace-pre-line max-w-xs min-w-[180px] flex flex-col items-center"
-            style={{ left: tooltipPos.left, top: tooltipPos.top, transform: 'translateX(-50%)' }}
+            className="fixed z-50 bg-black text-white text-sm rounded px-4 py-3 shadow-lg max-w-xs w-max pointer-events-none"
+            style={{
+              left: tooltipPos.left,
+              top: tooltipPos.top,
+              transform: 'translateX(-50%)',
+              whiteSpace: 'pre-line',
+            }}
           >
-            <span>{tool.description}</span>
-            <span className="w-3 h-3 bg-black rotate-45 absolute -top-1 left-1/2 -translate-x-1/2 z-[-1]" style={{boxShadow: '0 2px 6px rgba(0,0,0,0.15)'}}></span>
+            {tool.description}
+            <span
+              className="absolute left-1/2"
+              style={{
+                bottom: '100%',
+                transform: 'translateX(-50%)',
+                width: 0,
+                height: 0,
+                borderLeft: '8px solid transparent',
+                borderRight: '8px solid transparent',
+                borderBottom: '8px solid #000',
+                content: '""',
+                display: 'block',
+              }}
+            />
           </div>
         )}
       </div>
