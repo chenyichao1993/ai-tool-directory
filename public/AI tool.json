@@ -570,7 +570,7 @@
     "category": "Audio Processing & Generation",
     "name": "Cleanvoice AI",
     "websiteUrl": "https://cleanvoice.ai",
-    "description": "Cleanvoice AI is mainly used for audio cleaning and enhancement. It can remove background noise and 杂音 from audio to improve the quality and clarity of audio.",
+    "description": "Cleanvoice AI is primarily designed for audio cleaning and enhancement. It eliminates background noise and extraneous sounds from audio, significantly improving its quality and clarity.",
     "tags": [
       "Audio Cleaning",
       "Audio Enhancement",

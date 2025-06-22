@@ -161,7 +161,7 @@ export default function Home() {
         </div>
       </div>
       {/* 主内容区，左侧留出sidebar宽度，sidebarOpen=false时内容居中 */}
-      <main className={`flex-1 transition-all duration-300 ${sidebarOpen ? 'ml-[300px]' : 'ml-0'}`}>
+      <main className={`flex-1 transition-all duration-300 ${sidebarOpen ? 'ml-[260px]' : 'ml-0'}`}>
         <div className="max-w-[1200px] mx-auto px-4 py-8">
           {/* 顶部导语 */}
           <h1 className="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-900 mt-8">
