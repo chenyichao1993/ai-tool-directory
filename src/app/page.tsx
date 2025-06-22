@@ -166,14 +166,14 @@ export default function Home() {
           {/* 搜索框 */}
           <div className="flex justify-center mb-6">
             <div className="relative w-full max-w-3xl">
-              <input
-                type="text"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                placeholder="Search AI tools by name, category or description..."
+            <input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Search AI tools by name, category or description..."
                 className="w-full pr-16 pl-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-base"
                 style={{ height: 44 }}
-              />
+            />
               <span
                 className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#6C47FF] flex items-center justify-center shadow"
                 style={{ width: 40, height: 40, borderRadius: '50%', boxShadow: '0 2px 8px rgba(108,71,255,0.08)', cursor: 'pointer' }}
@@ -213,8 +213,13 @@ export default function Home() {
               </div>
             </div>
           ) : (
+            filteredTools.length === 0 ? (
+              <div className="flex items-center justify-center w-full" style={{ minHeight: '220px' }}>
+                <span className="text-gray-400 text-xl">No tools found. Please try another keyword.</span>
+            </div>
+          ) : (
             <div className="flex flex-col gap-12 w-full">
-              {categories.filter(cat => groupedTools[cat].length > 0).map(cat => (
+                {categories.filter(cat => groupedTools[cat].length > 0).map(cat => (
                 <div key={cat}>
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-2xl font-bold text-gray-900">{cat}</h2>
@@ -228,12 +233,13 @@ export default function Home() {
                   </div>
                   <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {groupedTools[cat].slice(0, 12).map((tool, idx) => (
-                      <ToolCard key={idx} tool={tool} />
+                        <ToolCard key={idx} tool={tool} />
                     ))}
                   </div>
                 </div>
               ))}
             </div>
+            )
           )}
         </div>
       </main>
@@ -253,7 +259,7 @@ function ToolCard({ tool }: { tool: Tool }) {
     if (element) {
       if (element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth) {
         setIsClamped(true);
-      } else {
+    } else {
         setIsClamped(false);
       }
     }
@@ -291,13 +297,13 @@ function ToolCard({ tool }: { tool: Tool }) {
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
            <rect x="3" y="3" width="14" height="14" rx="3" stroke="#888" strokeWidth="1.5" fill="none"/>
-           <path d="M9 7h4v4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-           <path d="M9 11l4-4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 7h4v4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 11l4-4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </a>
       <div className="h-40 w-full bg-gray-100 dark:bg-gray-700">
         {tool.screenshot ? (
-          <img
+        <img
             src={tool.screenshot}
             alt={tool.name}
             className="w-full h-full object-cover"
@@ -310,9 +316,9 @@ function ToolCard({ tool }: { tool: Tool }) {
         <h3 className="text-lg font-bold mb-1 truncate text-gray-800 dark:text-white">{tool.name}</h3>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{tool.category}</p>
         <p
-          ref={descRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+        ref={descRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
           className="text-sm text-gray-600 dark:text-gray-300 relative"
           style={{
             display: '-webkit-box',
@@ -322,8 +328,8 @@ function ToolCard({ tool }: { tool: Tool }) {
             textOverflow: 'ellipsis',
             cursor: isClamped ? 'pointer' : 'default',
           }}
-        >
-          {tool.description}
+      >
+        {tool.description}
         </p>
         {showTooltip && tooltipPos && (
           <div
