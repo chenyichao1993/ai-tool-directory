@@ -230,7 +230,7 @@ export default function Home() {
                 </div>
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {groupedTools[selectedCategory]?.length ? (
-                    groupedTools[selectedCategory].map((tool, idx) => (
+                    groupedTools[selectedCategory].slice(0, 8).map((tool, idx) => (
                       <ToolCard key={idx} tool={tool} />
                     ))
                   ) : (
