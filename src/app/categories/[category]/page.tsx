@@ -166,7 +166,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
-            {displayCategory} Tools
+            {displayCategory}{/tools$/i.test(displayCategory.trim()) ? '' : ' Tools'}
           </h1>
           <Link href="/" className="text-indigo-600 hover:underline text-sm font-medium">
             &laquo; Back to Home
