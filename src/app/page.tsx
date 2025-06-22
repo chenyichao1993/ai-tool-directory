@@ -65,7 +65,8 @@ export default function Home() {
     ? tools.filter(t =>
         t.name.toLowerCase().includes(searchLower) ||
         t.category.toLowerCase().includes(searchLower) ||
-        t.description.toLowerCase().includes(searchLower)
+        t.description.toLowerCase().includes(searchLower) ||
+        (Array.isArray((t as any).tags) && (t as any).tags.join(' ').toLowerCase().includes(searchLower))
       )
     : tools;
 
