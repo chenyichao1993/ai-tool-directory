@@ -13,19 +13,20 @@ const categories = [
 
 export default function MobileSidebar() {
   const [open, setOpen] = useState(false);
+  console.log('render MobileSidebar');
   return (
     <>
       {/* 汉堡菜单按钮 */}
       <button
-        className="fixed top-4 right-4 z-50 block md:hidden bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow"
-        onClick={() => setOpen(true)}
+        className="fixed top-4 right-4 z-[10000] pointer-events-auto block md:hidden bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow"
+        onClick={() => { console.log('open'); setOpen(true); }}
         aria-label="Open sidebar"
       >
         <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
       </button>
       {/* 弹出侧边栏 */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/40 flex md:hidden">
+        <div className="fixed inset-0 z-[9999] bg-black/40 flex md:hidden">
           <div className="w-64 bg-white h-full shadow-lg p-4 flex flex-col">
             {/* 关闭按钮 */}
             <button
