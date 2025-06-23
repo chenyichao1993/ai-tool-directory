@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* 侧边栏 - fixed定位，始终可见 */}
-      <div className={`fixed top-0 left-0 h-screen z-30 transition-all duration-300 ${sidebarOpen ? 'w-56' : 'w-0'} bg-white border-r border-gray-200 flex flex-col`}>
+      <div className={`fixed top-0 left-0 h-screen z-30 transition-all duration-300 ${sidebarOpen ? 'w-56' : 'w-0'} bg-white border-r border-gray-200 flex flex-col hidden md:flex`}>
         {/* open/close 按钮（SVG图标+tooltip） */}
         {sidebarOpen ? (
           <div className="absolute top-4 right-[-20px] z-40">
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
       </div>
       {/* 主内容区，左侧留出sidebar宽度，sidebarOpen=false时内容居中 */}
-      <main className={`flex-1 transition-all duration-300 ${sidebarOpen ? 'ml-[260px]' : 'ml-0'}`}>
+      <main className={`flex-1 transition-all duration-300 md:ml-[260px] ml-0`}>
         <div className="max-w-[1200px] mx-auto px-4 py-8">
           {/* 顶部导语 */}
           <h1 className="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-900 mt-8">
@@ -225,7 +225,7 @@ export default function Home() {
                     className="text-indigo-600 hover:underline text-sm font-medium"
                     onClick={() => window.open(`/categories/${encodeURIComponent(selectedCategory.toLowerCase().replace(/\s+/g, '-'))}`, '_blank')}
                   >
-                    {`Check all ${selectedCategory}${/tools$/i.test(selectedCategory.trim()) ? '' : ' tools'} »`}
+                    More »
                   </button>
                 </div>
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -254,7 +254,7 @@ export default function Home() {
                           className="text-indigo-600 hover:underline text-sm font-medium"
                           onClick={() => handleShowAll(cat)}
                         >
-                          {`Check all ${cat}${/tools$/i.test(cat.trim()) ? '' : ' tools'} »`}
+                          More »
                         </button>
                       </div>
                       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
