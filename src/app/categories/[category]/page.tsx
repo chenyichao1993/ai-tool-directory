@@ -175,7 +175,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
           </Link>
         </div>
         {loading ? (
-          <div className="text-center text-gray-500">加载工具中...</div>
+          <div className="text-center text-gray-500">Loading tools...</div>
         ) : filteredTools.length > 0 ? (
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {filteredTools.map((tool, idx) => (
