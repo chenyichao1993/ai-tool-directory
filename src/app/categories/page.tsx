@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useEffect, useState, useMemo } from "react";
 import Breadcrumbs from "../Breadcrumbs";
-import { tools as allTools } from "../../data/tools";
 
 const CATEGORY_LIST = [
   "AI Writing & Content Generation",
@@ -47,15 +46,39 @@ const categoryMeta: Record<string, { icon: string; desc: string }> = {
 };
 
 export default function CategoriesPage() {
-  // 统计每个分类下的工具
-  const categoryStats = CATEGORY_LIST.map(cat => {
-    const toolsInCat = allTools.filter(t => t.category === cat);
-    return {
-      name: cat,
-      count: toolsInCat.length,
-      tools: toolsInCat
-    };
-  });
+  // 新增：用来保存异步加载的工具数据
+  const [tools, setTools] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/AI tool.json")
+      .then(res => res.json())
+      .then(data => {
+        setTools(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
+
+  // 统计每个分类下的工具数量
+  const categoryStats = useMemo(() => {
+    return CATEGORY_LIST.map(cat => {
+      const toolsInCat = tools.filter(t => t.category === cat);
+      return {
+        name: cat,
+        count: toolsInCat.length,
+        tools: toolsInCat
+      };
+    });
+  }, [tools]);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-500 text-lg">加载中...</div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -81,10 +104,10 @@ export default function CategoriesPage() {
                 <div className="text-gray-500 text-sm mb-2 min-h-[36px]">{meta.desc}</div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xs bg-indigo-100 text-indigo-700 rounded-full px-2 py-0.5">{cat.count} tools</span>
-                  {topTools.map(t => t.logoUrl && (
+                  {topTools.map(t => t.screenshot && (
                     <img
-                      key={t.id}
-                      src={t.logoUrl}
+                      key={t.name}
+                      src={t.screenshot}
                       alt={t.name}
                       className="w-6 h-6 rounded shadow border border-gray-200 bg-white"
                       title={t.name}
