@@ -161,8 +161,8 @@ export default function Home() {
         </div>
       </div>
       {/* 主内容区，左侧留出sidebar宽度，sidebarOpen=false时内容居中 */}
-      <main className={`flex-1 transition-all duration-300 md:ml-[260px] ml-0`}>
-        <div className="max-w-[1200px] mx-auto px-4 py-8">
+      <main className={`flex-1 transition-all duration-300 ml-0 ${sidebarOpen ? 'md:ml-[260px]' : 'md:ml-0 md:flex md:justify-center'}`}>
+        <div className="max-w-[1200px] mx-auto px-5 md:px-4 py-8">
           {/* 顶部导语 */}
           <h1 className="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-900 mt-8">
             Discover the best AI websites and AI tools
@@ -207,7 +207,7 @@ export default function Home() {
                     <div className="flex items-center justify-between mb-4">
                       <h2 className="text-2xl font-bold text-gray-900">{cat}</h2>
                     </div>
-                    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                       {groupedTools[cat].map((tool, idx) => (
                         <ToolCard key={idx} tool={tool} />
                       ))}
@@ -228,7 +228,7 @@ export default function Home() {
                     More »
                   </button>
                 </div>
-                <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {groupedTools[selectedCategory]?.length ? (
                     groupedTools[selectedCategory].slice(0, 8).map((tool, idx) => (
                       <ToolCard key={idx} tool={tool} />
@@ -257,7 +257,7 @@ export default function Home() {
                           More »
                         </button>
                       </div>
-                      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                      <div className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {groupedTools[cat].slice(0, 8).map((tool, idx) => (
                           <ToolCard key={idx} tool={tool} />
                         ))}
@@ -310,7 +310,7 @@ function ToolCard({ tool }: { tool: Tool }) {
 
   return (
     <div
-      className="group relative block bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-shadow duration-300 hover:shadow-lg cursor-pointer"
+      className="group relative block bg-white dark:bg-gray-800 border-2 border-gray-300 shadow-lg rounded-xl max-w-sm w-full mx-auto mb-2 min-h-[340px] overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer md:border md:border-gray-200 md:shadow-lg md:rounded-lg md:max-w-full md:mx-0 md:mb-0"
       onClick={() => window.open(`/tools/${tool.id}`, '_blank')}
     >
       <a
@@ -328,7 +328,7 @@ function ToolCard({ tool }: { tool: Tool }) {
           <path d="M9 11l4-4" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </a>
-      <div className="h-40 w-full bg-gray-100 dark:bg-gray-700">
+      <div className="h-52 w-full bg-gray-100 dark:bg-gray-700 md:h-40">
         {tool.screenshot ? (
         <img
             src={tool.screenshot}
@@ -339,7 +339,7 @@ function ToolCard({ tool }: { tool: Tool }) {
           <div className="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
         )}
       </div>
-      <div className="p-4">
+      <div className="p-4 md:p-4">
         <h3 className="text-lg font-bold mb-1 truncate text-gray-800 dark:text-white">{tool.name}</h3>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{tool.category}</p>
         <p
