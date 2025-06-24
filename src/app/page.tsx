@@ -310,7 +310,7 @@ function ToolCard({ tool }: { tool: Tool }) {
 
   return (
     <div
-      className="group relative block bg-white dark:bg-gray-800 border-2 border-gray-300 shadow-lg rounded-xl max-w-sm w-full mx-auto mb-2 min-h-[340px] overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer md:border md:border-gray-200 md:shadow-lg md:rounded-lg md:max-w-full md:mx-0 md:mb-0"
+      className="group relative block bg-white dark:bg-gray-800 border-2 border-gray-300 shadow-lg rounded-xl max-w-sm w-full mx-auto mb-2 overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer md:border md:border-gray-200 md:shadow-lg md:rounded-lg md:max-w-full md:mx-0 md:mb-0"
       onClick={() => window.open(`/tools/${tool.id}`, '_blank')}
     >
       <a
