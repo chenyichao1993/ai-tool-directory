@@ -346,15 +346,7 @@ function ToolCard({ tool }: { tool: Tool }) {
         ref={descRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-          className="text-sm text-gray-600 dark:text-gray-300 relative"
-          style={{
-            display: '-webkit-box',
-            WebkitLineClamp: 3,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            cursor: isClamped ? 'pointer' : 'default',
-          }}
+          className="text-sm text-gray-600 dark:text-gray-300 relative md:[display:-webkit-box] md:[-webkit-line-clamp:3] md:[-webkit-box-orient:vertical] md:overflow-hidden md:text-ellipsis"
       >
         {tool.description}
         </p>
