@@ -1,0 +1,94 @@
+.footer {
+  width: 100%;
+  background: #f7fbfd;
+  border-top: 1px solid #e5e7eb;
+  padding: 40px 0 0 0;
+  margin-top: 48px;
+  font-size: 15px;
+  color: #222;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 32px 32px;
+  gap: 32px;
+}
+.brand {
+  min-width: 220px;
+}
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.siteName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+}
+.slogan {
+  color: #2d3748;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+.linksWrap {
+  display: flex;
+  gap: 48px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+.colTitle {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #222;
+}
+.link {
+  color: #1b7e5a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.link:hover {
+  color: #0e4d32;
+  text-decoration: underline;
+}
+.bottom {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 12px;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bottomLinks {
+  display: flex;
+  gap: 18px;
+}
+@media (max-width: 900px) {
+  .top {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px 24px 16px;
+  }
+  .linksWrap {
+    gap: 24px;
+  }
+  .bottom {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+} 

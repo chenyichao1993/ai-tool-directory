@@ -4,6 +4,7 @@ import "./globals.css";
 import BackToTop from "./BackToTop";
 import MobileSidebar from "./MobileSidebar";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
         {/* 其他内容 */}
         {children}
         <BackToTop />
+        <Footer />
       </body>
     </html>
   );
