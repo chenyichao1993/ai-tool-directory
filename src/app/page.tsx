@@ -92,10 +92,10 @@ export default function Home() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* 侧边栏 - fixed定位，始终可见 */}
-      <div className={`fixed top-0 left-0 h-screen z-30 transition-all duration-300 ${sidebarOpen ? 'w-56' : 'w-0'} bg-white border-r border-gray-200 flex flex-col hidden md:flex`}>
+      <div className={`fixed top-16 left-0 h-[calc(100vh-64px)] z-30 transition-all duration-300 ${sidebarOpen ? 'w-56' : 'w-0'} bg-white border-r border-gray-200 flex flex-col hidden md:flex`}>
         {/* open/close 按钮（SVG图标+tooltip） */}
         {sidebarOpen ? (
-          <div className="absolute top-4 right-[-20px] z-40">
+          <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 z-40">
             <button
               className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 border border-gray-300 shadow focus:outline-none relative"
               onClick={() => setSidebarOpen(false)}
@@ -118,7 +118,7 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="fixed top-4 left-4 z-40">
+          <div className="fixed left-4 top-1/2 -translate-y-1/2 z-40">
             <button
               className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 hover:bg-gray-300 border border-gray-300 shadow focus:outline-none relative"
               onClick={() => setSidebarOpen(true)}
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
         )}
         {/* 分类列表 */}
-        <div className={`flex flex-col gap-2 mt-16 px-2 overflow-y-auto transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} style={{maxHeight: 'calc(100vh - 48px)'}}>
+        <div className={`flex flex-col gap-2 mt-4 px-2 overflow-y-auto transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} style={{maxHeight: 'calc(100vh - 48px)'}}>
           <button
             className={`w-full px-4 py-2 rounded-lg text-left border text-sm font-medium transition ${selectedCategory === 'All' ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-indigo-50'}`}
             onClick={() => { setSelectedCategory('All'); setSearch(''); }}
