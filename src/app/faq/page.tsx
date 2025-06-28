@@ -8,8 +8,8 @@ export default function FAQPage() {
     <main className="max-w-2xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-4">Frequently Asked Questions</h1>
       <div className="mb-6">
-        <h2 className="text-lg font-semibold mb-2">What is ToolAIze?</h2>
-        <p>ToolAIze is a curated directory of the best AI tools available for various tasks, helping users discover, compare, and utilize AI solutions efficiently.</p>
+        <h2 className="text-lg font-semibold mb-2">What is Toolaize?</h2>
+        <p>Toolaize is a curated directory of the best AI tools available for various tasks, helping users discover, compare, and utilize AI solutions efficiently.</p>
       </div>
       <div className="mb-6">
         <h2 className="text-lg font-semibold mb-2">How do I submit a new AI tool?</h2>

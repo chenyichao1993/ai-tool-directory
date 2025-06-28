@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <div className={styles.logoRow}>
             <Image src="/logo.png" alt="logo" width={36} height={36} />
-            <span className={styles.siteName}>ToolAIze</span>
+            <Image src="/toolaize-logo.png" alt="Toolaize" width={110} height={24} style={{marginLeft: 0}} />
           </div>
           <div className={styles.slogan}>Discover the best AI tools for every task.</div>
         </div>
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
-        <span>© {new Date().getFullYear()} ToolAIze. All Rights Reserved.</span>
+        <span>© {new Date().getFullYear()} Toolaize. All Rights Reserved.</span>
       </div>
     </footer>
   );

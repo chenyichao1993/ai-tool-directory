@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="max-w-2xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
-      <p className="mb-4">At ToolAIze, we are committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+      <p className="mb-4">At Toolaize, we are committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">Information We Collect</h2>
       <ul className="list-disc pl-6 mb-4">
         <li>Personal information you provide (e.g., name, email) when submitting forms</li>

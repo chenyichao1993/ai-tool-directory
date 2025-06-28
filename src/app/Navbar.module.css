@@ -22,15 +22,15 @@
   gap: 4px;
 }
 .siteName {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #222;
-  margin-left: 4px;
+  margin-left: 0;
   letter-spacing: 0.2px;
-  line-height: 1;
+  line-height: 1.1;
   display: flex;
   align-items: center;
-  height: 48px;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }
 .desktopLinks {
   display: flex;

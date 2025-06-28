@@ -26,4 +26,4 @@ export default function SubmitToolPage() {
       <p className="text-sm text-gray-500 mt-4">All submissions are reviewed before being published. We may contact you for more information.</p>
     </main>
   );
-} 
+}

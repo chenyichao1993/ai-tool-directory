@@ -7,8 +7,6 @@ import styles from "./Navbar.module.css";
 const navLinks = [
   { name: { en: "Home", zh: "首页" }, href: "/" },
   { name: { en: "Categories", zh: "分类" }, href: "/categories" },
-  { name: { en: "Tags", zh: "标签" }, href: "/tags" },
-  { name: { en: "About", zh: "关于我们" }, href: "/about" },
 ];
 
 export default function Navbar() {
@@ -22,7 +20,7 @@ export default function Navbar() {
       <div className={styles.left}>
         <Link href="/" className={styles.logoWrap}>
           <Image src="/logo.png" alt="logo" width={48} height={48} />
-          <span className={styles.siteName}>ToolAIze</span>
+          <Image src="/toolaize-logo.png" alt="Toolaize" width={140} height={32} style={{marginLeft: 0}} />
         </Link>
       </div>
       <div className={styles.desktopLinks}>
@@ -31,7 +29,9 @@ export default function Navbar() {
             {link.name[lang]}
           </Link>
         ))}
-        <button className={styles.actionBtn}>{lang === 'en' ? 'Submit Tool' : '提交工具'}</button>
+        <Link href="/submit" className={styles.actionBtn}>
+          {lang === 'en' ? 'Submit Tool' : '提交工具'}
+        </Link>
         <div className={styles.loginLangWrap}>
           <button className={styles.loginBtn}>{lang === 'en' ? 'Login' : '登录'}</button>
           <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0}>
@@ -58,7 +58,9 @@ export default function Navbar() {
               {link.name[lang]}
             </Link>
           ))}
-          <button className={styles.actionBtn}>{lang === 'en' ? 'Submit Tool' : '提交工具'}</button>
+          <Link href="/submit" className={styles.actionBtn} onClick={()=>setMenuOpen(false)}>
+            {lang === 'en' ? 'Submit Tool' : '提交工具'}
+          </Link>
           <div className={styles.loginLangWrap}>
             <button className={styles.loginBtn}>{lang === 'en' ? 'Login' : '登录'}</button>
             <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0}>
