@@ -165,7 +165,7 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-4 py-8">
           {/* 顶部导语 */}
           <h1 className="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-900 mt-8">
-            Discover the best AI websites and AI tools
+            Discover The Best AI Websites & AI Tools
           </h1>
           {/* 搜索框 */}
           <div className="flex justify-center mb-6">

@@ -35,6 +35,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className={styles.fullDivider} />
       <div className={styles.bottom}>
         <span>© {new Date().getFullYear()} Toolaize. All Rights Reserved.</span>
       </div>
