@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const categories = [
   "AI Writing & Content Generation",
@@ -13,6 +13,14 @@ const categories = [
 
 export default function MobileSidebar() {
   const [open, setOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    const checkScreen = () => setIsDesktop(window.innerWidth >= 768);
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+  if (!isDesktop) return null;
   console.log('render MobileSidebar');
   return (
     <>
