@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Toolaize - Discover the best AI tools",
   description: "Toolaize helps you discover, compare, and leverage the best AI tools for every task.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
