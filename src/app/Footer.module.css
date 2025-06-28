@@ -1,11 +1,13 @@
 .footer {
   width: 100%;
-  background: #f7fbfd;
+  /* background: #f7fbfd; */
   border-top: 1px solid #e5e7eb;
   padding: 40px 0 0 0;
-  margin-top: 48px;
+  /* margin-top: 48px; 删除这行，去掉留白 */
   font-size: 15px;
   color: #222;
+  margin-left: 0;
+  transition: margin-left 0.3s;
 }
 .top {
   display: flex;
