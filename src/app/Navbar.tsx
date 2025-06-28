@@ -52,29 +52,32 @@ export default function Navbar() {
         <span className={styles.bar}></span>
       </div>
       {menuOpen && (
-        <div className={styles.mobileMenu}>
-          {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className={styles.mobileLink} onClick={()=>setMenuOpen(false)}>
-              {link.name[lang]}
+        <>
+          <div style={{position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.15)', zIndex: 9998}} onClick={() => { setMenuOpen(false); setShowLang(false); }} />
+          <div className={styles.mobileMenu} style={{zIndex: 9999}} onClick={e => e.stopPropagation()}>
+            {navLinks.map(link => (
+              <Link key={link.href} href={link.href} className={styles.mobileLink} onClick={()=>setMenuOpen(false)}>
+                {link.name[lang]}
+              </Link>
+            ))}
+            <Link href="/submit" className={styles.actionBtn} onClick={()=>setMenuOpen(false)}>
+              {lang === 'en' ? 'Submit Tool' : '提交工具'}
             </Link>
-          ))}
-          <Link href="/submit" className={styles.actionBtn} onClick={()=>setMenuOpen(false)}>
-            {lang === 'en' ? 'Submit Tool' : '提交工具'}
-          </Link>
-          <div className={styles.loginLangWrap}>
-            <button className={styles.loginBtn}>{lang === 'en' ? 'Login' : '登录'}</button>
-            <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0}>
-              <span className={styles.langIcon} role="img" aria-label="language">🌐</span>
-              <span className={styles.langText}>{lang === 'en' ? 'EN' : '中文'}</span>
-              <span className={styles.langArrow}>▼</span>
-              {showLang && (
-                <div className={styles.langDropdown} onClick={toggleLang}>
-                  {lang === 'en' ? '中文' : 'EN'}
-                </div>
-              )}
+            <div className={styles.loginLangWrap}>
+              <button className={styles.loginBtn}>{lang === 'en' ? 'Login' : '登录'}</button>
+              <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0}>
+                <span className={styles.langIcon} role="img" aria-label="language">🌐</span>
+                <span className={styles.langText}>{lang === 'en' ? 'EN' : '中文'}</span>
+                <span className={styles.langArrow}>▼</span>
+                {showLang && (
+                  <div className={styles.langDropdown} onClick={toggleLang}>
+                    {lang === 'en' ? '中文' : 'EN'}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );
