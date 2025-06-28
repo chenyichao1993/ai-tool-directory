@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
@@ -13,8 +13,21 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState<'en'|'zh'>('en');
   const [showLang, setShowLang] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const toggleLang = () => setLang(l => l === 'en' ? 'zh' : 'en');
   const handleLangClick = () => setShowLang(s => !s);
+
+  useEffect(() => {
+    if (!showLang) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setShowLang(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showLang]);
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.left}>
@@ -34,7 +47,7 @@ export default function Navbar() {
         </Link>
         <div className={styles.loginLangWrap}>
           <button className={styles.loginBtn}>{lang === 'en' ? 'Login' : '登录'}</button>
-          <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0}>
+          <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0} ref={langRef}>
             <span className={styles.langIcon} role="img" aria-label="language">🌐</span>
             <span className={styles.langText}>{lang === 'en' ? 'EN' : '中文'}</span>
             <span className={styles.langArrow}>▼</span>
@@ -65,7 +78,7 @@ export default function Navbar() {
             </Link>
             <div className={styles.loginLangWrap}>
               <button className={styles.loginBtn}>{lang === 'en' ? 'Login' : '登录'}</button>
-              <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0}>
+              <div className={styles.langSwitcher} onClick={handleLangClick} tabIndex={0} ref={langRef}>
                 <span className={styles.langIcon} role="img" aria-label="language">🌐</span>
                 <span className={styles.langText}>{lang === 'en' ? 'EN' : '中文'}</span>
                 <span className={styles.langArrow}>▼</span>
