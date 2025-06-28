@@ -24,7 +24,7 @@ export default function Footer() {
             <div className={styles.colTitle}>Support</div>
             <Link href="/submit" className={styles.link}>Submit Tool</Link>
             <Link href="/update" className={styles.link}>Update Tool</Link>
-            <Link href="/contact" className={styles.link}>Contact Us</Link>
+            <a href="mailto:cocolovetin@foxmail.com" className={styles.link}>Contact Us</a>
           </div>
           <div className={styles.col}>
             <div className={styles.colTitle}>About</div>

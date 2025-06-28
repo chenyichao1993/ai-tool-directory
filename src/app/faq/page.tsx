@@ -25,7 +25,7 @@ export default function FAQPage() {
       </div>
       <div className="mb-6">
         <h2 className="text-lg font-semibold mb-2">How can I contact support?</h2>
-        <p>If you need assistance, please visit our <a href="/contact" className="text-indigo-600 hover:underline">Contact Us</a> page.</p>
+        <p>If you need assistance, please <a href="mailto:cocolovetin@foxmail.com" className="text-indigo-600 hover:underline">Contact Us</a>.</p>
       </div>
     </main>
   );

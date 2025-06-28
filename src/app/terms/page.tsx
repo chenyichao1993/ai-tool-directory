@@ -24,7 +24,7 @@ export default function TermsPage() {
       <h2 className="text-xl font-semibold mt-8 mb-2">Changes to Terms</h2>
       <p className="mb-4">We may update these terms from time to time. Continued use of the site constitutes acceptance of the new terms.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">Contact</h2>
-      <p>If you have questions about these terms, please <a href="/contact" className="text-indigo-600 hover:underline">contact us</a>.</p>
+      <p>If you have questions about these terms, please <a href="mailto:cocolovetin@foxmail.com" className="text-indigo-600 hover:underline">contact us</a>.</p>
     </main>
   );
 } 

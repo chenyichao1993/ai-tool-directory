@@ -18,7 +18,7 @@ export default function AboutPage() {
         <li>Resources and guides to help you get started with AI</li>
       </ul>
       <h2 className="text-xl font-semibold mt-8 mb-2">Contact</h2>
-      <p>If you have any questions, suggestions, or partnership inquiries, please <a href="/contact" className="text-indigo-600 hover:underline">contact us</a>.</p>
+      <p>If you have any questions, suggestions, or partnership inquiries, please <a href="mailto:cocolovetin@foxmail.com" className="text-indigo-600 hover:underline">contact us</a>.</p>
     </main>
   );
 } 

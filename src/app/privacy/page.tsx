@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
         <li>You may opt out of non-essential communications at any time</li>
       </ul>
       <h2 className="text-xl font-semibold mt-8 mb-2">Contact</h2>
-      <p>If you have questions about this policy, please <a href="/contact" className="text-indigo-600 hover:underline">contact us</a>.</p>
+      <p>If you have questions about this policy, please <a href="mailto:cocolovetin@foxmail.com" className="text-indigo-600 hover:underline">contact us</a>.</p>
     </main>
   );
 } 

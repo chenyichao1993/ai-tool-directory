@@ -22,7 +22,7 @@ export default function TeamPage() {
         <li>Continuous learning and improvement</li>
         <li>Passion for AI innovation</li>
       </ul>
-      <p>Want to join us or collaborate? <a href="/contact" className="text-indigo-600 hover:underline">Contact us</a>!</p>
+      <p>Want to join us or collaborate? <a href="mailto:cocolovetin@foxmail.com" className="text-indigo-600 hover:underline">Contact us</a>!</p>
     </main>
   );
 } 
