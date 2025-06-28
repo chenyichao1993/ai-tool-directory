@@ -1,8 +1,24 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { useState } from "react";
 
 export default function Footer() {
+  const [showModal, setShowModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const email = "cocolovetin@foxmail.com";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      // 可选：处理复制失败
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
@@ -24,7 +40,7 @@ export default function Footer() {
             <div className={styles.colTitle}>Support</div>
             <Link href="/submit" className={styles.link}>Submit Tool</Link>
             <Link href="/update" className={styles.link}>Update Tool</Link>
-            <a href="mailto:cocolovetin@foxmail.com" className={styles.link}>Contact Us</a>
+            <span className={styles.link} style={{cursor: 'pointer'}} onClick={() => setShowModal(true)}>Contact Us</span>
           </div>
           <div className={styles.col}>
             <div className={styles.colTitle}>About</div>
@@ -39,6 +55,20 @@ export default function Footer() {
       <div className={styles.bottom}>
         <span>© {new Date().getFullYear()} Toolaize. All Rights Reserved.</span>
       </div>
+      {showModal && (
+        <div className={styles.contactModalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.contactModalContent} onClick={e => e.stopPropagation()}>
+            <div className={styles.contactModalTitle}>Contact Email</div>
+            <div className={styles.contactModalEmail}>{email}</div>
+            <div className={styles.contactModalBtnRow}>
+              <button className={styles.contactModalButton} onClick={handleCopy}>
+                {copied ? "Copied" : "Copy"}
+              </button>
+              <button className={styles.contactModalButtonSecondary} onClick={() => setShowModal(false)}>Close</button>
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 } 

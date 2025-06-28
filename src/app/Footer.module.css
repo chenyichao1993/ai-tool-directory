@@ -88,6 +88,76 @@
   background: #e5e7eb;
   margin: 0 0 12px 0;
 }
+.contactModalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactModalContent {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+  padding: 32px 28px 24px 28px;
+  min-width: 260px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.2s;
+}
+.contactModalTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #222;
+  text-align: center;
+}
+.contactModalEmail {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 22px;
+  word-break: break-all;
+  text-align: center;
+}
+.contactModalBtnRow {
+  display: flex;
+  gap: 16px;
+}
+.contactModalButton {
+  background: #7c5cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.contactModalButton:hover {
+  background: #5a3fd4;
+}
+.contactModalButtonSecondary {
+  background: #eee;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s;
+  outline: none;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.contactModalButtonSecondary:hover {
+  background: #d5d5d5;
+}
 @media (max-width: 900px) {
   .top {
     flex-direction: column;
@@ -136,4 +206,29 @@
   .bottom {
     margin-left: 260px;
   }
+}
+@media (max-width: 600px) {
+  .contactModalContent {
+    min-width: 0;
+    width: 92vw;
+    padding: 20px 6vw 16px 6vw;
+  }
+  .contactModalTitle {
+    font-size: 1.1rem;
+  }
+  .contactModalEmail {
+    font-size: 0.98rem;
+  }
+  .contactModalButton {
+    font-size: 0.98rem;
+    padding: 7px 14px;
+  }
+  .contactModalButtonSecondary {
+    font-size: 0.98rem;
+    padding: 7px 14px;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
 } 
