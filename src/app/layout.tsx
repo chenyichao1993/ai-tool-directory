@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BackToTop from "./BackToTop";
-import MobileSidebar from "./MobileSidebar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -33,7 +32,6 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <body>
         <Navbar />
-        <MobileSidebar />
         {/* 其他内容 */}
         {children}
         <BackToTop />
