@@ -82,7 +82,7 @@ export default function CategoriesPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 pt-4 pb-12">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">All Categories</h1>
         <p className="text-gray-500 mb-8 text-center">Browse all AI tool categories and discover the best tools for your needs.</p>
