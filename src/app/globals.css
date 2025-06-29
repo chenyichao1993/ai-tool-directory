@@ -214,6 +214,21 @@ button, a[role="button"], .btn, input[type="button"], input[type="submit"], inpu
     border-radius: 14px !important;
     display: block !important;
   }
+  .category-title {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+    word-break: break-word !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .category-title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px !important;
+  }
+  .category-back-btn, .category-back-btn a { display: none !important; }
 }
 
 @media (min-width: 601px) {
