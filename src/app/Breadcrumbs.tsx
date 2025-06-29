@@ -28,16 +28,24 @@ export default function Breadcrumbs({ paths }: BreadcrumbsProps) {
   } else {
     // 自动拆分路径
     const segments = pathname.split("/").filter(Boolean);
-    crumbs.push({ name: "Home", href: "/" });
-    let href = "";
-    segments.forEach((seg, idx) => {
-      href += "/" + seg;
-      let name = routeMap[seg] || seg.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-      if (idx === segments.length - 1 && seg !== "categories" && seg !== "tools" && seg !== "tags") {
-        name = decodeURIComponent(seg).replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-      }
-      crumbs.push({ name, href: idx === segments.length - 1 ? undefined : href });
-    });
+    // tags页面特殊处理
+    if (segments[0] === "tags" && segments.length === 2) {
+      crumbs.push({ name: "Home", href: "/" });
+      // 标签名美化
+      const tagName = decodeURIComponent(segments[1]).replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      crumbs.push({ name: tagName });
+    } else {
+      crumbs.push({ name: "Home", href: "/" });
+      let href = "";
+      segments.forEach((seg, idx) => {
+        href += "/" + seg;
+        let name = routeMap[seg] || seg.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+        if (idx === segments.length - 1 && seg !== "categories" && seg !== "tools" && seg !== "tags") {
+          name = decodeURIComponent(seg).replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+        }
+        crumbs.push({ name, href: idx === segments.length - 1 ? undefined : href });
+      });
+    }
   }
 
   // 移动端只显示Home、上一级、当前页

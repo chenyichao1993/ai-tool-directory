@@ -77,14 +77,17 @@ export default function TagPage({ params }: { params: { tag: string } }) {
     <main className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Breadcrumbs />
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">
-            Tools with tag: <span className="text-[#7C5CFA]">{displayTag}</span>
-          </h1>
-          <Link href="/" className="text-indigo-600 hover:underline text-sm font-medium">
-            &laquo; Back to All Tools
-          </Link>
-        </div>
+        {!loading && (
+          <div className="mb-8">
+            <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-center break-words">
+              <span className="text-black">Best </span>
+              <span className="text-black">{filteredTools.length}</span>
+              <span className="text-black"> </span>
+              <span className="text-[#7C5CFA]">{displayTag}</span>
+              <span className="text-black"> Tools</span>
+            </h1>
+          </div>
+        )}
 
         {loading ? (
           <div className="text-center text-gray-500">Loading tools...</div>
