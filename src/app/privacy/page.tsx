@@ -4,7 +4,15 @@ export const metadata = {
 };
 
 import PrivacyClient from "./PrivacyClient";
+import Breadcrumbs from "../Breadcrumbs";
 
 export default function PrivacyPolicyPage() {
-  return <PrivacyClient />;
+  return (
+    <main className="min-h-screen bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4 pt-4 pb-12">
+        <Breadcrumbs />
+        <PrivacyClient />
+      </div>
+    </main>
+  );
 } 
