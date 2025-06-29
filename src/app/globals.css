@@ -189,6 +189,31 @@ button, a[role="button"], .btn, input[type="button"], input[type="submit"], inpu
     padding: 4px 8px !important;
     line-height: 1.2 !important;
   }
+  /* 工具详情页主图移动端响应式升级 */
+  a.block.w-\[460px\].h-\[260px\].relative.group.rounded-xl.overflow-hidden {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    height: auto !important;
+    min-height: 160px !important;
+    aspect-ratio: 16/9 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10) !important;
+    border-radius: 14px !important;
+    transition: box-shadow 0.2s, transform 0.2s !important;
+  }
+  a.block.w-\[460px\].h-\[260px\].relative.group.rounded-xl.overflow-hidden:hover {
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16) !important;
+    transform: translateY(-2px) !important;
+  }
+  a.block.w-\[460px\].h-\[260px\].relative.group.rounded-xl.overflow-hidden img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 92vw !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+    display: block !important;
+  }
 }
 
 @media (min-width: 601px) {
