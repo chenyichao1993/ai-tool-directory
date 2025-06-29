@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function UpdateToolPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 pt-4 pb-12">
+    <main className="bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4 pt-4 sm:pt-8 pb-6 sm:pb-8">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Update an Existing Tool</h1>
         <p className="mb-4">If you notice outdated or incorrect information about an AI tool listed on ToolAIze, please use the form below to request an update. Your feedback helps us keep our directory accurate and useful.</p>

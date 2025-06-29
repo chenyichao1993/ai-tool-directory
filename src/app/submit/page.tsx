@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function SubmitToolPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 pt-4 pb-12">
+    <main className="bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4 pt-4 sm:pt-8 pb-6 sm:pb-8">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Submit a New AI Tool</h1>
         <p className="mb-4">Do you know an AI tool that should be listed on ToolAIze? Fill out the form below to submit your tool for review. We welcome submissions from developers, companies, and users alike.</p>
