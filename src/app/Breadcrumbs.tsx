@@ -32,9 +32,7 @@ export default function Breadcrumbs({ paths }: BreadcrumbsProps) {
     let href = "";
     segments.forEach((seg, idx) => {
       href += "/" + seg;
-      // 动态参数处理
       let name = routeMap[seg] || seg.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-      // 如果是最后一级且有动态参数（如工具名、分类名），可进一步优化
       if (idx === segments.length - 1 && seg !== "categories" && seg !== "tools" && seg !== "tags") {
         name = decodeURIComponent(seg).replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
       }
@@ -42,18 +40,30 @@ export default function Breadcrumbs({ paths }: BreadcrumbsProps) {
     });
   }
 
+  // 移动端只显示Home、上一级、当前页
+  let mobileCrumbs = crumbs;
+  if (typeof window !== 'undefined' && window.innerWidth <= 600 && crumbs.length > 3) {
+    mobileCrumbs = [crumbs[0], crumbs[crumbs.length - 2], crumbs[crumbs.length - 1]];
+  }
+
   return (
     <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-2">
-        {crumbs.map((crumb, idx) => (
-          <li key={idx} className="flex items-center">
+      <ol
+        className="flex items-center space-x-2 md:space-x-2 breadcrumb-mobile-wrap"
+      >
+        {(typeof window !== 'undefined' && window.innerWidth <= 600 ? mobileCrumbs : crumbs).map((crumb, idx, arr) => (
+          <li
+            key={idx}
+            className="flex items-center breadcrumb-mobile-item"
+            style={{ fontSize: window.innerWidth <= 600 ? '13px' : undefined, minWidth: 0, overflowWrap: 'anywhere', wordBreak: 'break-all', marginRight: window.innerWidth <= 600 ? 2 : undefined }}
+          >
             {idx > 0 && <span className="mx-1 text-gray-400">&gt;</span>}
             {crumb.href ? (
-              <Link href={crumb.href} className="hover:underline text-gray-700 font-medium">
+              <Link href={crumb.href} className="hover:underline text-gray-700 font-medium" style={{overflowWrap: 'anywhere', wordBreak: 'break-all'}}>
                 {crumb.name}
               </Link>
             ) : (
-              <span className="text-gray-400">{crumb.name}</span>
+              <span className="text-gray-400" style={{overflowWrap: 'anywhere', wordBreak: 'break-all'}}>{crumb.name}</span>
             )}
           </li>
         ))}
