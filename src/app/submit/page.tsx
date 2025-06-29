@@ -50,7 +50,20 @@ export default function SubmitToolPage() {
               <input type="text" className="block w-full border border-gray-300 px-3 py-2 mt-1" style={{width: '100%', borderRadius: '16px'}} placeholder="e.g. Writing, Image Generation" required />
             </label>
             <label className="font-semibold block">Description
-              <textarea className="block w-full border border-gray-300 px-3 py-2 mt-1" style={{width: '100%', borderRadius: '16px'}} rows={3} placeholder="Briefly describe the tool..." required />
+              <textarea
+                className="block border border-gray-300 px-3 py-2 mt-1"
+                style={{
+                  width: '100%',
+                  minWidth: 0,
+                  maxWidth: '100%',
+                  borderRadius: '22px',
+                  boxSizing: 'border-box',
+                  display: 'block'
+                }}
+                rows={3}
+                placeholder="Briefly describe the tool..."
+                required
+              />
             </label>
             <button className="submit-btn">Submit Tool</button>
           </div>

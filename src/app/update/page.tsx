@@ -47,7 +47,20 @@ export default function UpdateToolPage() {
               <input type="url" className="block w-full border border-gray-300 px-3 py-2 mt-1" style={{width: '100%', borderRadius: '16px'}} placeholder="https://..." required />
             </label>
             <label className="font-semibold block">Update Details
-              <textarea className="block w-full border border-gray-300 px-3 py-2 mt-1" style={{width: '100%', borderRadius: '16px'}} rows={3} placeholder="Describe the update needed..." required />
+              <textarea
+                className="block border border-gray-300 px-3 py-2 mt-1"
+                style={{
+                  width: '100%',
+                  minWidth: 0,
+                  maxWidth: '100%',
+                  borderRadius: '22px',
+                  boxSizing: 'border-box',
+                  display: 'block'
+                }}
+                rows={3}
+                placeholder="Describe the update needed..."
+                required
+              />
             </label>
             <button className="submit-btn">Submit Update</button>
           </div>
